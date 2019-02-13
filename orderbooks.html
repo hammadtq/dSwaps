@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <!-- begin::Head -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>dSwaps</title>
+        <meta name="description" content="Latest updates and statistic charts">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--begin::Fonts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script>
+            WebFont.load({
+
+                google: {
+"families":[
+"Poppins:300,400,500,600,700"]},
+
+                active: function() {
+
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+        <!--end::Fonts -->
+        <!--begin::Page Vendors Styles(used by this page) -->
+        <link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+          <!--end::Page Vendors Styles -->
+          <!--begin:: Global Mandatory Vendors -->
+  <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+  <!--end:: Global Mandatory Vendors -->
+
+  <!--begin:: Global Optional Vendors -->
+  <link href="./assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+  <link href="./assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
+  <!--end:: Global Optional Vendors -->
+
+  <!--begin::Global Theme Styles(used by all pages) -->
+
+          <link href="./assets/demo/demo3/base/style.bundle.css" rel="stylesheet" type="text/css" />
+          <!--end::Global Theme Styles -->
+        <link rel="shortcut icon" href="./images/favicon.ico" />
+
+        <link href="css/custom-styles.css" rel="stylesheet">
+    </head>
+    <!-- end::Head -->
+    <!-- begin::Body -->
+    <body class="k-page--fixed k-header--fixed k-header--minimize-menu k-header-mobile--fixed k-subheader--enabled k-subheader--transparent k-page--loading" >
+        <!-- begin::Page loader -->
+        <!-- end::Page Loader -->
+        <!-- begin:: Page -->
+        <!-- begin:: Header Mobile -->
+        <div id="k_header_mobile" class="k-header-mobile k-header-mobile--fixed " >
+            <div><br/><h2>dSwaps</h2></div>
+            <div class="k-header-mobile__toolbar">
+                <button class="k-header-mobile__toolbar-toggler" id="k_header_mobile_toggler"><span></span></button>
+                <button class="k-header-mobile__toolbar-topbar-toggler" id="k_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+            </div>
+        </div>
+        <!-- end:: Header Mobile -->
+        <div class="k-grid k-grid--hor k-grid--root">
+            <div class="k-grid__item k-grid__item--fluid k-grid k-grid--ver k-page">
+                <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor k-wrapper " id="k_wrapper">
+                    <!-- begin:: Header -->
+                    <div id="k_header" class="k-header k-grid__item k-header--fixed " data-kheader-minimize="on" style="background-image: url(./assets/demo/demo3/media/layout/header-bg.jpg)">
+                        <div class="k-header__top">
+                            <div class="k-container">
+                                <!-- begin:: Brand -->
+                                <div class="k-header__brand k-grid__item" id="k_header_brand">
+                                    <h1 style="color:white">dSwaps</h1>
+                                </div>
+                                <!-- end:: Brand -->
+                                <!-- begin:: Topbar -->
+                                <div class="k-header__topbar">
+                                    <!--begin: Network -->
+                                    <div class="k-header__topbar-item k-header__topbar-item--langs">
+                                        <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="20px 10px">
+                                            <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="networkName">
+                                              Network</button>
+                                        </div>
+
+                                    </div>
+                                    <!--end: Languages -->
+
+                                </div>
+                                <!-- end:: Topbar -->
+                            </div>
+                        </div>
+                        <div class="k-header__bottom">
+                            <div class="k-container">
+                                <!-- begin: Header Menu -->
+                                <button class="k-header-menu-wrapper-close" id="k_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+                                <div class="k-header-menu-wrapper" id="k_header_menu_wrapper">
+                                    <div id="k_header_menu" class="k-header-menu k-header-menu-mobile " >
+                                        <ul class="k-menu__nav ">
+                                          <li class="k-menu__item k-menu__item--open k-menu__item--here k-menu__item--submenu k-menu__item--rel k-menu__item--open k-menu__item--here" data-kmenu-submenu-toggle="click" aria-haspopup="true">
+                                              <a href="index.html" class="k-menu__link"><span class="k-menu__link-text">Simple Swap</span></a>
+                                          </li>
+                                          <li class="k-menu__item k-menu__item--open k-menu__item--here k-menu__item--submenu k-menu__item--rel k-menu__item--open k-menu__item--here" data-kmenu-submenu-toggle="click" aria-haspopup="true">
+                                              <a href="orderbooks.html" class="k-menu__link"><span class="k-menu__link-text">Orderbooks</span></a>
+                                          </li>
+                                        </ul>
+                                    </div>
+                                    <div class="k-header-toolbar">
+                                      <a href="#" class="btn btn-wide btn-bold btn-info btn-upper" data-toggle="modal" data-target="#createReserveModal" id="createReserve">Create Reserve</a>
+                                    </div>
+                                </div>
+                                <!-- end: Header Menu -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end:: Header -->
+                    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--ver k-grid--stretch">
+                        <div class="k-container k-body k-grid k-grid--ver" id="k_body">
+                            <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+                                <!-- begin:: Subheader -->
+                                <div class="k-subheader k-grid__item" id="k_subheader">
+                                    <div class="k-subheader__main">
+
+                                    </div>
+
+                                </div>
+                                <!-- end:: Subheader -->
+                                <!-- begin:: Content -->
+                                <div class="k-content k-grid__item k-grid__item--fluid" id="k_content">
+                                    <!--begin::Dashboard 4-->
+                                    <!--begin::Row-->
+                                    <div id="alerts"></div>
+                                    <!--begin::Portlet-->
+                                  		<div class="k-portlet">
+                                  			<div class="k-portlet__head">
+                                  				<div class="k-portlet__head-label">
+                                  					<h3 class="k-portlet__head-title">Orderbooks</h3>
+                                  				</div>
+                                  			</div>
+                                  			<div class="k-portlet__body">
+                                  				<!--begin::Section-->
+                                  				<div class="k-section">
+                                  					<div class="k-section__content">
+                                  						<table class="table table-striped m-table" id="reservesList">
+
+                                  						</table>
+                                              <div align="center" id="loadingDiv">
+                                                  <img src="./images/loading3.gif">
+                                                  <p><span id="loadingText">Loading..</span></p>
+                                              </div>
+                                  					</div>
+                                  				</div>
+                                  				<!--end::Section-->
+                                  			</div>
+                                  			<!--end::Form-->
+                                  		</div>
+                                  		<!--end::Portlet-->
+
+
+                                    <!--end::Row-->
+                                    <!--end::Dashboard 4-->
+                                </div>
+                                <!-- end:: Content -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- begin:: Footer -->
+                    <div class="k-footer k-grid__item" style="background-image: url(./assets/demo/demo3/media/layout/footer-bg.jpg)" id="k_footer">
+                        <div class="k-container">
+                            <div class="k-footer__top">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="k-footer__section">
+                                            <h3 class="k-footer__title">
+                                                About
+                                            </h3>
+                                            <div class="k-footer__about"> dSwaps is a community developed and supported version to facilitate token to token swaps and creation and management of permissionless reserves using Kyber Network's smart contracts. </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="k-footer__section">
+                                            <h3 class="k-footer__title">
+                                                Grab the source code
+                                            </h3>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <ul class="k-footer__nav">
+                                                        <li><a href="#" class="k-link">Github</a></li>
+                                                        <li><a href="https://developer.kyber.network/docs/Start/" class="k-link">Kyber's Documentation</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="k-footer__section">
+
+                                            <div class="k-footer__social">
+                                                <div class="k-footer__social-label"> Find us on Twitter: </div>
+                                                <ul class="k-footer__social-nav">
+
+                                                    <li>
+                                                        <a href="#"><i class="flaticon-twitter-logo-button"></i></a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-footer__bottom">
+                                <div class="k-footer__copyright"> <a href="http://dSwaps.com" target="_blank" class="k-link">dSwaps</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end:: Footer -->
+                </div>
+            </div>
+        </div>
+        <!-- end:: Page -->
+
+        <!-- end:: Quick Panel -->
+        <!-- begin:: Scrolltop -->
+        <div id="k_scrolltop" class="k-scrolltop"> <i class="la la-arrow-up"></i> </div>
+        <!-- end:: Scrolltop -->
+        <!--AlertModal -->
+        <div class="modal" id="alertModal" tabindex="-1" role="dialog" style="z-index:1000000001;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="alertModalText"></h5>
+                <button type="button" class="close" id="alert-cross-close-btn" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="alertModalBody" style="word-wrap: break-word;">
+              </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" id="alert-close-btn" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Success Alert-->
+        <div class="modal" id="successModal" tabindex="-1" role="dialog" style="z-index:1000000001;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="successModalText"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="successModalBody" style="word-wrap: break-word;">
+              </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loader Modal -->
+        <div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-body text-center">
+                <div class="loader"></div>
+                <div class="loader-txt" id="loader-txt">
+                  <p>Creating reserve</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal for Creating Reserves -->
+        <div class="modal" id="createReserveModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Create Reserve</h4>
+                <button type="button" class="close" data-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form action="" id="createReserveForm">
+                  <div class="form-group">
+                    <label for="tokenAddress">Token Contract Address:</label>
+                    <input type="text" class="form-control" id="tokenAddress" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <button type="submit" id="createReserveBtn" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+        <!--begin:: Toast markup-->
+<div class="toast toast-custom toast-fill fade hide" role="alert" aria-live="assertive" aria-atomic="true" id="k_toast_1">
+	<div class="toast-header">
+		<i class="toast-icon flaticon2-attention-exclamation-triangular-signal k-font-danger"></i>
+		<span class="toast-title" ></span>
+		<small class="toast-time"></small>
+	</div>
+	<div class="toast-body">
+	</div>
+</div>
+<!--end:: Toast markup-->
+
+        <!-- begin::Global Config(global config for global JS sciprts) -->
+        <script>
+            var KAppOptions = {
+
+    "colors": {
+
+        "state": {
+
+            "brand": "#4d5cf2",
+
+            "metal": "#c4c5d6",
+
+            "light": "#ffffff",
+
+            "accent": "#00c5dc",
+
+            "primary": "#5867dd",
+
+            "success": "#34bfa3",
+
+            "info": "#36a3f7",
+
+            "warning": "#ffb822",
+
+            "danger": "#fd3995",
+
+            "focus": "#9816f4"
+        },
+
+        "base": {
+
+            "label": [
+
+                "#c5cbe3",
+
+                "#a1a8c3",
+
+                "#3d4465",
+
+                "#3e4466"
+            ],
+
+            "shape": [
+
+                "#f0f3ff",
+
+                "#d9dffa",
+
+                "#afb4d4",
+
+                "#646c9a"
+            ]
+        }
+    }
+};
+        </script>
+        <!-- end::Global Config -->
+        <!--begin:: Global Mandatory Vendors -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+        <!--end:: Global Mandatory Vendors -->
+
+        <!--begin:: Global Optional Vendors -->
+        <script src="./assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+        <script src="./assets/vendors/general/toastr/build/toastr.min.js" type="text/javascript"></script>
+        <!--end:: Global Optional Vendors -->
+<!--end:: Global Optional Vendors -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+
+        <script src="./assets/demo/demo3/base/scripts.bundle.js" type="text/javascript"></script>
+        <!--end::Global Theme Bundle -->
+        <!--begin::Page Vendors(used by this page) -->
+        <script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+        <!--end::Page Vendors -->
+
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/indutny/bn.js/master/lib/bn.js"></script>
+
+        <script src="functions/contract-functions.js"></script>
+        <script src="functions/common.js"></script>
+        <script>
+
+        var reservesTable = ""; //initialize the reserves datatable
+
+        var chainAddresses = {
+                "ETH": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "ADX": "0x499990DB50b34687CDaFb2C8DaBaE4E99d6F38A7",
+                "APPC": "0x2799f05B55d56be756Ca01Af40Bf7350787F48d4",
+                "AST": "0xeF06F410C26a0fF87b3a43927459Cce99268a2eF",
+                "BAT": "0xDb0040451F373949A4Be60dcd7b6B8D6E42658B6",
+                "BBO": "0xa94758d328af7ef1815e73053e95b5F86588C16D",
+                "BQX": "0x9504A86A881F63Da06302FB3639d4582022097DB",
+                "COFI": "0xb91786188f8d4e35d6d67799e9f162587bf4da03",
+                "DAI": "0xaD6D458402F60fD3Bd25163575031ACDce07538D",
+                "ELF": "0x9Fcc27c7320703c43368cf1A4bf076402cd0D6B4",
+                "ENG": "0x95cc8d8f29D0f7fcC425E8708893E759d1599c97",
+                "GTO": "0xe55c607d58c53b2B06A8E38f67F4c0FcAeEd2c31",
+                "IOST": "0x27db28a6C4ac3D82a08D490cfb746E6F02bC467C",
+                "KNC": "0x4E470dc7321E84CA96FcAEDD0C8aBCebbAEB68C6",
+                "LINK": "0xb4f7332ed719Eb4839f091EDDB2A3bA309739521",
+                "MANA": "0x72fd6C7C1397040A66F33C2ecC83A0F71Ee46D5c",
+                "MOC": "0x1742c81075031b8f173d2327e3479d1fc3feaa76",
+                "OMG": "0x4BFBa4a8F28755Cb2061c413459EE562c6B9c51b",
+                "POWR": "0xa577731515303F0C0D00E236041855A5C4F114dC",
+                "RCN": "0x99338aa9218C6C23AA9d8cc2f3EFaf29954ea26B",
+                "RDN": "0x5422Ef695ED0B1213e2B953CFA877029637D9D26",
+                "REQ": "0xb43D10BbE7222519Da899B72bF2c7f094b6F79D7",
+                "SALT": "0xB47f1A9B121BA114d5e98722a8948e274d0F4042",
+                "SNT": "0xbF5d8683b9BE6C43fcA607eb2a6f2626A18837a6",
+                "STORM": "0x8FFf7De21de8ad9c510704407337542073FDC44b",
+                "ZIL": "0xaD78AFbbE48bA7B670fbC54c65708cbc17450167"
+            };
+
+            getExpectedRateFromContract = async function(){
+              var srcToken = $('#srcToken').find(":selected").text();
+              var destToken = $('#destToken').find(":selected").text();
+              var srcQty = $('#srcQty').val();
+
+              if(destToken == "Select" || srcToken == "Select"){
+                $('#conversionRate').html("0.00");
+                $('#estimatedQty').html("0.00");
+              }else{
+                var result = await getExpectedRateFromAddress(chainAddresses[srcToken], chainAddresses[destToken]);
+                $('#conversionRate').html("1 "+srcToken+" = <code>"+result+" "+destToken+"</code>");
+                $('#estimatedQty').val(srcQty*result);
+              }
+            }
+
+            getReserves = async function(){
+              if(sessionStorage.getItem('reserveTokenDetails') != undefined){
+                var reserveTokenDetails = JSON.parse(sessionStorage.getItem('reserveTokenDetails'));
+              }else{
+                toastr.info("Fetching permissionless reserves");
+                $('#loadingText').html("Fetching permissionless reserves");
+                var reserveList = await getReserveList();
+                console.log(reserveList);
+                toastr.info("Fetching token details");
+                $('#loadingText').html("Fetching token details");
+                var reserveDetails = await getReserveDetails(reserveList);
+                toastr.info("Fetching current rates");
+                $('#loadingText').html("Fetching current rates");
+                var reserveTokenDetails = await getReserveTokenExpectedRate(reserveDetails);
+                sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
+              }
+              $('#loadingDiv').remove();
+              var reservesArr = [];
+              for (var i = 0; i < reserveTokenDetails.length; i++) {
+                var indReserveArr = [];
+                var tokenImage = reserveTokenDetails[i][2]["tokenSymbol"];
+                if(chainAddresses[tokenImage] == undefined){
+                  tokenImage = "No_image_available";
+                }
+                indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]["tokenSymbol"]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]["tokenSymbol"]+"</a>");
+                indReserveArr.push(reserveTokenDetails[i][3]);
+                reservesArr.push(indReserveArr);
+              }
+
+              reservesTable = $('#reservesList').DataTable({
+                          data: reservesArr,
+                          columns: [
+                              {title: "Token"},
+                              {title: "Price"}
+                          ],
+                          responsive: true
+                      }
+              );
+            }
+
+            loadWeb3 = async function(){
+                  // Modern dapp browsers...
+              if (window.ethereum) {
+                  window.web3 = new Web3(ethereum);
+                  try {
+                      // Request account access if needed
+                      await ethereum.enable();
+                      // Acccounts now exposed
+                      //web3.eth.sendTransaction({/* ... */});
+                  } catch (error) {
+                      // User denied account access...
+                  }
+              }
+              // Legacy dapp browsers...
+              else if (window.web3) {
+                  window.web3 = new Web3(web3.currentProvider);
+
+                  // Acccounts always exposed
+                  //web3.eth.sendTransaction({/* ... */});
+              }
+              // Non-dapp browsers...
+              else {
+                  console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+              }
+            }
+            toastr.options = {
+              "closeButton": false,
+              "debug": false,
+              "newestOnTop": false,
+              "progressBar": false,
+              "positionClass": "toast-top-right",
+              "preventDuplicates": false,
+              "onclick": null,
+              "showDuration": "300",
+              "hideDuration": "1000",
+              "timeOut": "5000",
+              "extendedTimeOut": "1000",
+              "showEasing": "swing",
+              "hideEasing": "linear",
+              "showMethod": "fadeIn",
+              "hideMethod": "fadeOut"
+            };
+
+            refreshReservesTable = function(){
+              console.log("refreshing");
+              sessionStorage.removeItem('reserveTokenDetails');
+              reservesTable.destroy();
+              getReserves();
+            }
+
+            $( "#createReserveForm" ).submit(function( event ) {
+              event.preventDefault();
+              var createReserveTokenAddress = $("#tokenAddress").val();
+              console.log(createReserveTokenAddress);
+
+              createReserve = async function(token){
+              var checkListingStage = await getReserveListingStage(token);
+              console.log(checkListingStage);
+              if(checkListingStage == "invalid_address"){
+                errorModal("Invalid contract address");
+              }else if(checkListingStage == '3'){
+                 errorModal("A reserve contract already exist for this token address");
+              }else{
+
+                toastr.info("Adding orderbook contract");
+                var addOrderbookContract = await addOrderbook(token);
+                console.log(addOrderbookContract);
+                if(addOrderbookContract["transactionHash"] != undefined){
+                  toastr.info("Initiating orderbook contract");
+                  var initOrderbookContract = await initOrderbook(token);
+                  console.log(initOrderbookContract);
+                  if(initOrderbookContract["transactionHash"] != undefined){
+                    toastr.info("Listing orderbook contract");
+                    var listOrderbookContract = await listOrderbook(token);
+                    console.log(listOrderbookContract);
+                    if(listOrderbookContract["transactionHash"] != undefined){
+                        $("#createReserveModal").modal("hide");
+                        successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
+                    }else{
+                      errorModal(listOrderbookContract);
+                    }
+                  }else{
+                    errorModal(initOrderbookContract);
+                  }
+                }else{
+                  errorModal(addOrderbookContract);
+                }
+              }
+
+              }
+              createReserve(createReserveTokenAddress);
+
+              $("#successModal").on("hidden.bs.modal", function () {
+                  refreshReservesTable();
+              });
+            });
+
+            $(document).ready(async function($) {
+              loadWeb3();
+              web3.eth.net.getNetworkType().then(function(value) {
+                if(value == "ropsten"){
+                  $("#networkName").html("Ropsten");
+                }
+              });
+              await setupRopsten();
+              getReserves();
+              //getExpectedRateFromContract(); //load ETH-KNC rate at load
+              $( "#submitSwap" ).click(async function() {
+                event.preventDefault();
+                var srcToken = $('#srcToken').find(":selected").text();
+                var destToken = $('#destToken').find(":selected").text();
+                var srcQty = $('#srcQty').val();
+
+                if(destToken == "Select" || srcToken == "Select" || srcQty == "0" || srcQty == "" || isNaN(parseInt(srcQty, 10))){
+                  errorModal("Please select source and destination tokens along with source token quantity!");
+                }else{
+
+                  if(srcToken == "ETH"){
+                    toastr.info("Converting ETH to "+destToken, "Swap submitted!");
+                    var result = await etherToToken(chainAddresses[destToken], srcQty);
+                    hideLoadingModal();
+                    handleResult(result, "ETH to "+destToken+" swap");
+                  }else if (destToken == "ETH"){
+                    toastr.info("Converting "+srcToken+" to ETH", "Swap submitted!");
+                    var result = await tokenToEther(chainAddresses[srcToken], srcQty);
+                    handleResult(result, srcToken+" to ETH swap");
+                  }else{
+                    toastr.info("Converting "+srcToken+" to "+destToken, "Swap submitted!");
+                    var result = await tokenToToken(chainAddresses[srcToken], chainAddresses[destToken], srcQty);
+                    handleResult(result, srcToken+" to "+destToken+" swap");
+                }
+              }
+
+              });
+
+              $('#srcToken, #destToken, #srcQty').change(function() {
+                getExpectedRateFromContract();
+              });
+
+              $('#srcQty').on('input propertychange paste', function() {
+                getExpectedRateFromContract();
+              });
+
+            });
+
+            window.addEventListener('load', async () => {
+
+            });
+    </script>
+    </body>
+    <!-- end::Body -->
+</html>

@@ -1,0 +1,39 @@
+//
+// Demo Config
+//
+
+
+
+
+// Layout
+$k-aside-default-width: 245px;
+$k-aside-offcanvas-width: 255px;
+
+$k-page-padding: (
+	desktop: 30px,
+	mobile: 15px
+);
+
+// Brand Color
+$k-brand-color: #4d5cf2 !default;
+$k-brand-inverse-color: #ffffff !default;
+
+// Body color
+$k-page-body-bg-color: #efeff5;  // page body bg color
+$k-page-content-bg-color: #f9f9fc; // page content bg color
+$k-page-container-width: 1380px; //  fixed page width
+$k-page-fluid-container-padding: 80px; // fluid page padding 
+
+
+// Layout mixins
+@mixin k-page-fixed-mode {
+	@media ( min-width: #{$k-page-container-width + 60px} ) {
+        @content;
+    }
+}
+
+@mixin k-page-fluid-mode {
+	@media (max-width: #{$k-page-container-width + 60px - 1px}) {
+        @content;
+    }
+}

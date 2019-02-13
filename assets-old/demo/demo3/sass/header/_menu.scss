@@ -1,0 +1,96 @@
+//
+// Header Menu
+//
+
+
+
+
+// Build desktop menu
+@include k-menu-hor-build-layout(k-get($k-header-config, menu, desktop));
+@include k-menu-hor-build-skin(k-get($k-header-config, menu, desktop), default);
+
+// Build mobile menu
+@include k-menu-ver-build-layout(k-get($k-header-config, menu, tablet-and-mobile));
+@include k-menu-ver-build-skin(k-get($k-header-config, menu, tablet-and-mobile), default);
+
+// Header menu mobile offcanvas
+@include k-offcanvas-build(k-header-menu-wrapper, tablet-and-mobile, k-get($k-header-config, menu, offcanvas-mobile));
+
+// Page fixed mode(above $k-page-container-width)
+@include k-page-fixed-mode {
+	.k-header-menu-wrapper {
+		@include k-rounded {
+			border-top-left-radius: $k-border-radius;
+			border-top-right-radius: $k-border-radius;
+		}
+	}
+}
+
+// Desktop mode(1024px and above)
+@include k-media-above(lg) {
+	// Header default mode
+	.k-header-menu-wrapper {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #fff;
+		box-shadow: 0px 0px 20px 0px rgba(103,92,139,0.05);
+		padding: 0 k-get($k-page-padding, desktop);
+
+		.k-header-menu {			
+			.k-menu__nav {
+				> .k-menu__item {
+					> .k-menu__link {
+						border-radius: $k-border-radius;
+						padding: 0.65rem 1.25rem;
+					}
+
+					> .k-menu__submenu {
+						> .k-menu__subnav {
+							border-top-left-radius: 0;
+							border-top-right-radius: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.k-header-toolbar {
+			padding-left: 1rem;
+			display: flex;
+			align-items: center;
+		}
+	}	
+}
+
+// Media range(above 1024px and below 1200px)
+@include k-media-range(lg, xl) {
+	.k-header-menu-wrapper {
+		.k-header-menu {
+			.k-menu__nav {
+				> .k-menu__item {
+					> .k-menu__link {
+						padding: 0.75rem 0.75rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Tablet and mobile mode(1024px and below)
+@include k-media-below(lg) {
+	.k-header-menu-wrapper {
+		.k-header-menu {
+			.k-menu__nav {
+				margin-bottom: 0;
+				padding-bottom: 10px;
+			}
+		}
+
+		.k-header-toolbar {
+			padding-left: 30px;
+		}
+	}
+}

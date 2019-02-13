@@ -1,0 +1,72 @@
+//
+// Aside Menu
+//
+
+
+
+// General mode
+.k-aside-menu {
+	.k-menu__nav {
+		.k-menu__item {
+			&.k-menu__item--active {
+				> .k-menu__link {
+					border-radius: 2rem;		
+				}				
+			}
+		}
+	}
+}
+
+// Desktop mode
+@include k-desktop {
+	.k-aside-menu-wrapper {
+
+		.k-aside--fixed & {
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.k-aside--fixed.k-header--minimize & {
+			transition: all 0.3s ease;
+			position: fixed;
+			top: auto;
+			bottom: auto;
+			width: $k-aside-default-width;
+			z-index: k-get($k-aside-config, base, fixed, zindex);			
+		}
+
+		// Animations
+		.k-header--minimize-all.k-header--minimize.k-aside--fixed & {
+			top: k-get($k-header-config, base, desktop, fixed, height, top) + k-get($k-header-config, base, desktop, fixed, height, bottom);
+		}
+
+		.k-header--minimize-topbar.k-header--minimize.k-aside--fixed & {
+			top: k-get($k-header-config, base, desktop, fixed, height, top);
+		}
+
+		.k-header--minimize-menu.k-header--minimize.k-aside--fixed & {
+			top: k-get($k-header-config, base, desktop, fixed, height, bottom);
+		}
+	}
+
+	.k-aside-menu {
+		margin: 15px 0;
+
+		.k-aside--minimize & {
+			> .k-menu__nav  {
+				> .k-menu__item {		
+					&.k-menu__item--active,
+					&.k-menu__item--expanded {
+						.k-menu__link {
+							border-radius: 6px;		
+						}				
+					}
+				}
+			}
+		}
+	}
+}
+
+// Build menu
+@include k-menu-ver-build-layout(k-get($k-aside-config, menu));
+@include k-menu-ver-build-skin(k-get($k-aside-config, menu), default);

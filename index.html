@@ -3,8 +3,8 @@
     <!-- begin::Head -->
     <head>
         <meta charset="utf-8"/>
-        <title>dSwaps</title>
-        <meta name="description" content="Latest updates and statistic charts">
+        <title>dSwaps - Decentralized Token Exchange based over Kyber Swaps</title>
+        <meta name="description" content="Decentralized Token Exchange based over Kyber Swaps. The website is hosted over IPFS, you can exchange Ether for many ERC20 based tokens and vice-versa.">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!--begin::Fonts -->
@@ -141,7 +141,10 @@
                                 <div class="k-content k-grid__item k-grid__item--fluid">
                                     <!--begin::Dashboard 4-->
                                     <!--begin::Row-->
-                                    <div id="alerts"></div>
+                                    <div class="alert alert-warning d-none" role="alert" id="networkAlert">
+                        							<div class="alert-icon"><i class="flaticon-warning"></i></div>
+                        						  	<div class="alert-text">You are on a test network! Please switch to Main Ethereum Network from your MetaMask extension to use dSwaps on the mainnet.</div>
+                        						</div>
                                     <div class="k-portlet k-portlet--height-fluid">
                                       <div class="k-portlet__head k-portlet__head--noborder">
                                           <div class="k-portlet__head-label">
@@ -160,25 +163,43 @@
                                                   <label class="col-form-label">Source Token</label>
                                                   <div class="input-group mb-3">
                                                       <select class="form-control selectpicker" id="srcToken" style="width:100%;display:block" name="srcToken" data-live-search="true" required>
-                                                        <option value="">Select</option>
                                                         <option value="ETH" selected>ETH</option>
+                                                        <option value="ABT">ABT</option>
                                                         <option value="ADX">ADX</option>
+                                                        <option value="AE">AE</option>
+                                                        <option value="AION">AION</option>
                                                         <option value="APPC">APPC</option>
                                                         <option value="AST">AST</option>
                                                         <option value="BAT">BAT</option>
                                                         <option value="BBO">BBO</option>
+                                                        <option value="BLZ">BLZ</option>
+                                                        <option value="BNT">BNT</option>
                                                         <option value="BQX">BQX</option>
+                                                        <option value="CHAT">CHAT</option>
                                                         <option value="COFI">COFI</option>
+                                                        <option value="CVC">CVC</option>
                                                         <option value="DAI">DAI</option>
+                                                        <option value="DGX">DGX</option>
+                                                        <option value="DTA">DTA</option>
+                                                        <option value="EDU">EDU</option>
                                                         <option value="ELF">ELF</option>
                                                         <option value="ENG">ENG</option>
                                                         <option value="GTO">GTO</option>
                                                         <option value="IOST">IOST</option>
                                                         <option value="KNC">KNC</option>
+                                                        <option value="LBA">LBA</option>
+                                                        <option value="LEND">LEND</option>
                                                         <option value="LINK">LINK</option>
                                                         <option value="MANA">MANA</option>
+                                                        <option value="MDS">MDS</option>
                                                         <option value="MOC">MOC</option>
+                                                        <option value="MOT">MOT</option>
+                                                        <option value="MTL">MTL</option>
                                                         <option value="OMG">OMG</option>
+                                                        <option value="PAL">PAL</option>
+                                                        <option value="PAY">PAY</option>
+                                                        <option value="POE">POE</option>
+                                                        <option value="POLY">POLY</option>
                                                         <option value="POWR">POWR</option>
                                                         <option value="RCN">RCN</option>
                                                         <option value="RDN">RDN</option>
@@ -186,6 +207,14 @@
                                                         <option value="SALT">SALT</option>
                                                         <option value="SNT">SNT</option>
                                                         <option value="STORM">STORM</option>
+                                                        <option value="SUB">SUB</option>
+                                                        <option value="TOMO">TOMO</option>
+                                                        <option value="TUSD">TUSD</option>
+                                                        <option value="WABI">WABI</option>
+                                                        <option value="WAX">WAX</option>
+                                                        <option value="WBTC">WBTC</option>
+                                                        <option value="WETH">WETH</option>
+                                                        <option value="WINGS">WINGS</option>
                                                         <option value="ZIL">ZIL</option>
                                                       </select>
                                                       <div class="input-group-append">
@@ -202,23 +231,42 @@
                                                       <select class="form-control selectpicker" data-live-search="true" id="destToken" style="width:100%;display:block" name="destToken" required>
                                                         <option selected value="">Select</option>
                                                         <option value="ETH">ETH</option>
+                                                        <option value="ABT">ABT</option>
                                                         <option value="ADX">ADX</option>
+                                                        <option value="AE">AE</option>
+                                                        <option value="AION">AION</option>
                                                         <option value="APPC">APPC</option>
                                                         <option value="AST">AST</option>
                                                         <option value="BAT">BAT</option>
                                                         <option value="BBO">BBO</option>
+                                                        <option value="BLZ">BLZ</option>
+                                                        <option value="BNT">BNT</option>
                                                         <option value="BQX">BQX</option>
+                                                        <option value="CHAT">CHAT</option>
                                                         <option value="COFI">COFI</option>
+                                                        <option value="CVC">CVC</option>
                                                         <option value="DAI">DAI</option>
+                                                        <option value="DGX">DGX</option>
+                                                        <option value="DTA">DTA</option>
+                                                        <option value="EDU">EDU</option>
                                                         <option value="ELF">ELF</option>
                                                         <option value="ENG">ENG</option>
                                                         <option value="GTO">GTO</option>
                                                         <option value="IOST">IOST</option>
                                                         <option value="KNC" selected>KNC</option>
+                                                        <option value="LBA">LBA</option>
+                                                        <option value="LEND">LEND</option>
                                                         <option value="LINK">LINK</option>
                                                         <option value="MANA">MANA</option>
+                                                        <option value="MDS">MDS</option>
                                                         <option value="MOC">MOC</option>
+                                                        <option value="MOT">MOT</option>
+                                                        <option value="MTL">MTL</option>
                                                         <option value="OMG">OMG</option>
+                                                        <option value="PAL">PAL</option>
+                                                        <option value="PAY">PAY</option>
+                                                        <option value="POE">POE</option>
+                                                        <option value="POLY">POLY</option>
                                                         <option value="POWR">POWR</option>
                                                         <option value="RCN">RCN</option>
                                                         <option value="RDN">RDN</option>
@@ -226,6 +274,14 @@
                                                         <option value="SALT">SALT</option>
                                                         <option value="SNT">SNT</option>
                                                         <option value="STORM">STORM</option>
+                                                        <option value="SUB">SUB</option>
+                                                        <option value="TOMO">TOMO</option>
+                                                        <option value="TUSD">TUSD</option>
+                                                        <option value="WABI">WABI</option>
+                                                        <option value="WAX">WAX</option>
+                                                        <option value="WBTC">WBTC</option>
+                                                        <option value="WETH">WETH</option>
+                                                        <option value="WINGS">WINGS</option>
                                                         <option value="ZIL">ZIL</option>
                                                       </select>
                                                       <div class="input-group-append">
@@ -323,7 +379,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <ul class="k-footer__nav">
-                                                        <li><a href="#" class="k-link">Github</a></li>
+                                                        <li><a href="https://github.com/hammadtq/dSwaps" class="k-link">Github</a></li>
                                                         <li><a href="https://developer.kyber.network/docs/Start/" class="k-link">Kyber's Documentation</a></li>
                                                     </ul>
                                                 </div>
@@ -339,7 +395,7 @@
                                                 <ul class="k-footer__social-nav">
 
                                                     <li>
-                                                        <a href="#"><i class="flaticon-twitter-logo-button"></i></a>
+                                                        <a href="https://twitter.com/hammadtariq"><i class="flaticon-twitter-logo-button"></i></a>
                                                     </li>
 
                                                 </ul>
@@ -516,34 +572,7 @@
         <script src="functions/common.js"></script>
         <script>
 
-        var chainAddresses = {
-                "ETH": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                "ADX": "0x499990DB50b34687CDaFb2C8DaBaE4E99d6F38A7",
-                "APPC": "0x2799f05B55d56be756Ca01Af40Bf7350787F48d4",
-                "AST": "0xeF06F410C26a0fF87b3a43927459Cce99268a2eF",
-                "BAT": "0xDb0040451F373949A4Be60dcd7b6B8D6E42658B6",
-                "BBO": "0xa94758d328af7ef1815e73053e95b5F86588C16D",
-                "BQX": "0x9504A86A881F63Da06302FB3639d4582022097DB",
-                "COFI": "0xb91786188f8d4e35d6d67799e9f162587bf4da03",
-                "DAI": "0xaD6D458402F60fD3Bd25163575031ACDce07538D",
-                "ELF": "0x9Fcc27c7320703c43368cf1A4bf076402cd0D6B4",
-                "ENG": "0x95cc8d8f29D0f7fcC425E8708893E759d1599c97",
-                "GTO": "0xe55c607d58c53b2B06A8E38f67F4c0FcAeEd2c31",
-                "IOST": "0x27db28a6C4ac3D82a08D490cfb746E6F02bC467C",
-                "KNC": "0x4E470dc7321E84CA96FcAEDD0C8aBCebbAEB68C6",
-                "LINK": "0xb4f7332ed719Eb4839f091EDDB2A3bA309739521",
-                "MANA": "0x72fd6C7C1397040A66F33C2ecC83A0F71Ee46D5c",
-                "MOC": "0x1742c81075031b8f173d2327e3479d1fc3feaa76",
-                "OMG": "0x4BFBa4a8F28755Cb2061c413459EE562c6B9c51b",
-                "POWR": "0xa577731515303F0C0D00E236041855A5C4F114dC",
-                "RCN": "0x99338aa9218C6C23AA9d8cc2f3EFaf29954ea26B",
-                "RDN": "0x5422Ef695ED0B1213e2B953CFA877029637D9D26",
-                "REQ": "0xb43D10BbE7222519Da899B72bF2c7f094b6F79D7",
-                "SALT": "0xB47f1A9B121BA114d5e98722a8948e274d0F4042",
-                "SNT": "0xbF5d8683b9BE6C43fcA607eb2a6f2626A18837a6",
-                "STORM": "0x8FFf7De21de8ad9c510704407337542073FDC44b",
-                "ZIL": "0xaD78AFbbE48bA7B670fbC54c65708cbc17450167"
-            };
+
 
             getExpectedRateFromContract = async function(){
               var srcToken = $('#srcToken').find(":selected").text();
@@ -621,20 +650,15 @@
 
             $(document).ready(async function($) {
               loadWeb3();
-              web3.eth.net.getNetworkType().then(function(value) {
-                if(value == "ropsten"){
-                  $("#networkName").html("Ropsten");
-                }
-              });
+              await setupNetwork();
               getTokenPairs();
-              await setupRopsten();
+
               getExpectedRateFromContract(); //load ETH-KNC rate at load
               $( "#submitSwap" ).click(async function() {
                 event.preventDefault();
                 var srcToken = $('#srcToken').find(":selected").text();
                 var destToken = $('#destToken').find(":selected").text();
                 var srcQty = $('#srcQty').val();
-                srcQty = new BN(srcQty);
 
                 if(destToken == "Select" || srcToken == "Select" || srcQty == "0" || srcQty == "" || isNaN(parseInt(srcQty, 10))){
                   errorModal("Please select source and destination tokens along with source token quantity!");
@@ -643,7 +667,7 @@
                 }else{
 
                   if(srcToken == "ETH"){
-                    toastr.info("Converting ETH to "+destToken, "Swap submitted!");
+                    toastr.info("Converting ETH to "+destToken, "Submitted swap to MetaMask");
                     var result = await etherToToken(chainAddresses[destToken], srcQty);
                     hideLoadingModal();
                     handleResult(result, "ETH to "+destToken+" swap");

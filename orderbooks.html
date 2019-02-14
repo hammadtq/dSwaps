@@ -145,13 +145,19 @@
                                 <div class="k-content k-grid__item k-grid__item--fluid" id="k_content">
                                     <!--begin::Dashboard 4-->
                                     <!--begin::Row-->
-                                    <div id="alerts"></div>
+                                    <div class="alert alert-warning d-none" role="alert" id="networkAlert">
+                        							<div class="alert-icon"><i class="flaticon-warning"></i></div>
+                        						  	<div class="alert-text">You are on a test network! Please switch to Main Ethereum Network from your MetaMask extension to use dSwaps on the mainnet.</div>
+                        						</div>
                                     <!--begin::Portlet-->
                                   		<div class="k-portlet">
                                   			<div class="k-portlet__head">
                                   				<div class="k-portlet__head-label">
                                   					<h3 class="k-portlet__head-title">Orderbooks</h3>
                                   				</div>
+                                          <div class="k-portlet__head-toolbar">
+                                            <a href="#" class="btn btn-info btn-bold btn-upper flaticon-refresh" id="refreshReserveList"></a>
+                                          </div>
                                   			</div>
                                   			<div class="k-portlet__body">
                                   				<!--begin::Section-->
@@ -202,7 +208,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <ul class="k-footer__nav">
-                                                        <li><a href="#" class="k-link">Github</a></li>
+                                                        <li><a href="https://github.com/hammadtq/dSwaps" class="k-link">Github</a></li>
                                                         <li><a href="https://developer.kyber.network/docs/Start/" class="k-link">Kyber's Documentation</a></li>
                                                     </ul>
                                                 </div>
@@ -218,7 +224,7 @@
                                                 <ul class="k-footer__social-nav">
 
                                                     <li>
-                                                        <a href="#"><i class="flaticon-twitter-logo-button"></i></a>
+                                                        <a href="https://twitter.com/hammadtariq"><i class="flaticon-twitter-logo-button"></i></a>
                                                     </li>
 
                                                 </ul>
@@ -425,35 +431,7 @@
         <script>
 
         var reservesTable = ""; //initialize the reserves datatable
-
-        var chainAddresses = {
-                "ETH": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                "ADX": "0x499990DB50b34687CDaFb2C8DaBaE4E99d6F38A7",
-                "APPC": "0x2799f05B55d56be756Ca01Af40Bf7350787F48d4",
-                "AST": "0xeF06F410C26a0fF87b3a43927459Cce99268a2eF",
-                "BAT": "0xDb0040451F373949A4Be60dcd7b6B8D6E42658B6",
-                "BBO": "0xa94758d328af7ef1815e73053e95b5F86588C16D",
-                "BQX": "0x9504A86A881F63Da06302FB3639d4582022097DB",
-                "COFI": "0xb91786188f8d4e35d6d67799e9f162587bf4da03",
-                "DAI": "0xaD6D458402F60fD3Bd25163575031ACDce07538D",
-                "ELF": "0x9Fcc27c7320703c43368cf1A4bf076402cd0D6B4",
-                "ENG": "0x95cc8d8f29D0f7fcC425E8708893E759d1599c97",
-                "GTO": "0xe55c607d58c53b2B06A8E38f67F4c0FcAeEd2c31",
-                "IOST": "0x27db28a6C4ac3D82a08D490cfb746E6F02bC467C",
-                "KNC": "0x4E470dc7321E84CA96FcAEDD0C8aBCebbAEB68C6",
-                "LINK": "0xb4f7332ed719Eb4839f091EDDB2A3bA309739521",
-                "MANA": "0x72fd6C7C1397040A66F33C2ecC83A0F71Ee46D5c",
-                "MOC": "0x1742c81075031b8f173d2327e3479d1fc3feaa76",
-                "OMG": "0x4BFBa4a8F28755Cb2061c413459EE562c6B9c51b",
-                "POWR": "0xa577731515303F0C0D00E236041855A5C4F114dC",
-                "RCN": "0x99338aa9218C6C23AA9d8cc2f3EFaf29954ea26B",
-                "RDN": "0x5422Ef695ED0B1213e2B953CFA877029637D9D26",
-                "REQ": "0xb43D10BbE7222519Da899B72bF2c7f094b6F79D7",
-                "SALT": "0xB47f1A9B121BA114d5e98722a8948e274d0F4042",
-                "SNT": "0xbF5d8683b9BE6C43fcA607eb2a6f2626A18837a6",
-                "STORM": "0x8FFf7De21de8ad9c510704407337542073FDC44b",
-                "ZIL": "0xaD78AFbbE48bA7B670fbC54c65708cbc17450167"
-            };
+        var reserveDetails = ""; //for holding reserveDetails before fetching price - globally so that we only refresh price after every 15 seconds
 
             getExpectedRateFromContract = async function(){
               var srcToken = $('#srcToken').find(":selected").text();
@@ -470,34 +448,47 @@
               }
             }
 
+            getTokenPrice = async function(reserveDetails){
+              var reserveTokenDetails = await getReserveTokenExpectedRate(reserveDetails);
+              sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
+              return reserveTokenDetails;
+            }
+
+
             getReserves = async function(){
               if(sessionStorage.getItem('reserveTokenDetails') != undefined){
                 var reserveTokenDetails = JSON.parse(sessionStorage.getItem('reserveTokenDetails'));
+                reserveDetails = JSON.parse(sessionStorage.getItem('reserveDetails'));
               }else{
                 toastr.info("Fetching permissionless reserves");
                 $('#loadingText').html("Fetching permissionless reserves");
                 var reserveList = await getReserveList();
-                console.log(reserveList);
                 toastr.info("Fetching token details");
                 $('#loadingText').html("Fetching token details");
-                var reserveDetails = await getReserveDetails(reserveList);
+                reserveDetails = await getReserveDetails(reserveList);
+                sessionStorage.setItem('reserveDetails', JSON.stringify(reserveDetails));
                 toastr.info("Fetching current rates");
                 $('#loadingText').html("Fetching current rates");
-                var reserveTokenDetails = await getReserveTokenExpectedRate(reserveDetails);
-                sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
+                var reserveTokenDetails = await getTokenPrice(reserveDetails);
               }
+
               $('#loadingDiv').remove();
               var reservesArr = [];
               for (var i = 0; i < reserveTokenDetails.length; i++) {
                 var indReserveArr = [];
-                var tokenImage = reserveTokenDetails[i][2]["tokenSymbol"];
+                var tokenImage = reserveTokenDetails[i][2];
                 if(chainAddresses[tokenImage] == undefined){
                   tokenImage = "No_image_available";
                 }
-                indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]["tokenSymbol"]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]["tokenSymbol"]+"</a>");
+                indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]+"</a>");
                 indReserveArr.push(reserveTokenDetails[i][3]);
                 reservesArr.push(indReserveArr);
               }
+
+              //destroy the table and create new
+              if ($.fn.DataTable.isDataTable( reservesTable ) ) {
+                  reservesTable.destroy();
+                }
 
               reservesTable = $('#reservesList').DataTable({
                           data: reservesArr,
@@ -553,12 +544,23 @@
               "hideMethod": "fadeOut"
             };
 
-            refreshReservesTable = function(){
-              console.log("refreshing");
+            refreshReservesTable = async function(){
               sessionStorage.removeItem('reserveTokenDetails');
-              reservesTable.destroy();
+
               getReserves();
             }
+
+            refreshTokenPrice = async function(){
+              sessionStorage.removeItem('reserveTokenDetails');
+              var reserveTokenDetails = await getTokenPrice(reserveDetails);
+              //reservesTable.destroy();
+              getReserves();
+            }
+
+            //refresh reserve button listener
+            $( "#refreshReserveList" ).click(async function() {
+              refreshReservesTable();
+            });
 
             $( "#createReserveForm" ).submit(function( event ) {
               event.preventDefault();
@@ -567,21 +569,60 @@
 
               createReserve = async function(token){
               var checkListingStage = await getReserveListingStage(token);
-              console.log(checkListingStage);
               if(checkListingStage == "invalid_address"){
                 errorModal("Invalid contract address");
-              }else if(checkListingStage == '3'){
+              }else if(checkListingStage[1] == '3'){
                  errorModal("A reserve contract already exist for this token address");
               }else{
+                console.log(checkListingStage);
 
-                toastr.info("Adding orderbook contract");
-                var addOrderbookContract = await addOrderbook(token);
-                console.log(addOrderbookContract);
-                if(addOrderbookContract["transactionHash"] != undefined){
-                  toastr.info("Initiating orderbook contract");
-                  var initOrderbookContract = await initOrderbook(token);
-                  console.log(initOrderbookContract);
-                  if(initOrderbookContract["transactionHash"] != undefined){
+                if(checkListingStage[1] == '0'){
+                  // add, init and list
+                  toastr.info("Adding orderbook contract");
+                  var addOrderbookContract = await addOrderbook(token);
+                  console.log(addOrderbookContract);
+                  if(addOrderbookContract["transactionHash"] != undefined){
+                    toastr.info("Initiating orderbook contract");
+                    var initOrderbookContract = await initOrderbook(token);
+                    console.log(initOrderbookContract);
+                    if(initOrderbookContract["transactionHash"] != undefined){
+                      toastr.info("Listing orderbook contract");
+                      var listOrderbookContract = await listOrderbook(token);
+                      console.log(listOrderbookContract);
+                      if(listOrderbookContract["transactionHash"] != undefined){
+                          $("#createReserveModal").modal("hide");
+                          successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
+                      }else{
+                        errorModal(listOrderbookContract);
+                      }
+                    }else{
+                      errorModal(initOrderbookContract);
+                    }
+                  }else{
+                    errorModal(addOrderbookContract);
+                  }
+                }else if(checkListingStage[1] == '1'){
+                  console.log("I am here");
+                    //just init and list
+                    toastr.info("Initiating orderbook contract");
+                    var initOrderbookContract = await initOrderbook(token);
+                    console.log(initOrderbookContract);
+                    if(initOrderbookContract["transactionHash"] != undefined){
+                      toastr.info("Listing orderbook contract");
+                      var listOrderbookContract = await listOrderbook(token);
+                      console.log(listOrderbookContract);
+                      if(listOrderbookContract["transactionHash"] != undefined){
+                          $("#createReserveModal").modal("hide");
+                          successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
+                      }else{
+                        errorModal(listOrderbookContract);
+                      }
+                    }else{
+                      errorModal(initOrderbookContract);
+                    }
+
+                }else{
+                    //just list the token
                     toastr.info("Listing orderbook contract");
                     var listOrderbookContract = await listOrderbook(token);
                     console.log(listOrderbookContract);
@@ -591,12 +632,9 @@
                     }else{
                       errorModal(listOrderbookContract);
                     }
-                  }else{
-                    errorModal(initOrderbookContract);
-                  }
-                }else{
-                  errorModal(addOrderbookContract);
                 }
+
+
               }
 
               }
@@ -609,13 +647,9 @@
 
             $(document).ready(async function($) {
               loadWeb3();
-              web3.eth.net.getNetworkType().then(function(value) {
-                if(value == "ropsten"){
-                  $("#networkName").html("Ropsten");
-                }
-              });
-              await setupRopsten();
-              getReserves();
+              await setupNetwork();
+              await getReserves();
+              setInterval(function() { refreshTokenPrice(reserveDetails); }, 15000);
               //getExpectedRateFromContract(); //load ETH-KNC rate at load
               $( "#submitSwap" ).click(async function() {
                 event.preventDefault();

@@ -25,4 +25,5 @@ To get started with IPFS, see the [documentation](https://docs.ipfs.io/introduct
 ## Kyber Documentation
 To understand the functions in ```functions/contract-functions.js```, please [Kyber Documentation](https://developer.kyber.network/docs/Start/).
 
+## Credits
 The project is based over [Crypto9](https://github.com/eddietio/crypto9), a project that was developed at the first ETHSingapre Hackathon in December, 2018.

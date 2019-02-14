@@ -1,6 +1,6 @@
 # dSwaps
 
-dSwaps is a static dapp suitable for hosting on IPFS. The dapp does not use any kind of server and communicates directly with ethereum blockchain.
+dSwaps is a static dapp suitable for hosting on IPFS. The dapp does not use any kind of server and communicates directly with the Ethereum blockchain.
 
 ## Getting Started
 To start using the app, download or clone it on your computer. Run an IPFS daemon, then add dSwaps folder to the IPFS using

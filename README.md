@@ -1,9 +1,13 @@
 # dSwaps
 
-dSwaps is a static dapp suitable for hosting on IPFS. The dapp does not use any kind of server and communicates directly with the Ethereum blockchain.
+dSwaps is a static dapp suitable for hosting on IPFS. The dapp does not use any kind of server and communicates directly with the Ethereum blockchain. The dapp uses Kyber Networks swaps and permissionless reserve functionality to allow anyone to become a market maker and swap their ETH and ERC20 based tokens in a decentralized-permissionless way!
+
+## Features
+* Simple Swaps
+* Permissionless token reserves/orderbooks 
 
 ## Getting Started
-To start using the app, download or clone it on your computer. Run an IPFS daemon, then add dSwaps folder to the IPFS using
+To start using the dapp, download or clone it on your computer. Run an IPFS daemon, then add dSwaps folder to the IPFS using
 ```ipfs add -r dSwaps``` command. Note the main folder hash that the terminal will provide, open it in your bowser using ```localhost:8080/<your-hash>``` or by opening ```ipfs.io/ipfs/<your-hash>``` to start using the dapp.
 
 You can also the pin your dapp instance by using one of the IPFS pinning service providers such as cloudflare-ipfs.com

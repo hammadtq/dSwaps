@@ -10,16 +10,16 @@ You can also the pin your dapp instance by using one of the IPFS pinning service
 
 ## Supporting Networks
 
-⋅⋅* Main Ethereum Network
-⋅⋅* Ropsten Test Network
+* Main Ethereum Network
+* Ropsten Test Network
 
 ## Demo
 You can see a [demo hosted over IPFS here](https://cloudflare-ipfs.com/ipfs/QmahpRL1pALo5XUhK2F4H4bovAJQBqHZJnUJGvuicsGHRh/index.html).
 
-##IPFS Documentation
+## IPFS Documentation
 To get started with IPFS, see the [documentation](https://docs.ipfs.io/introduction/usage/).
 
 ## Supported Wallets
-⋅⋅* MetaMask Browser Extension
+* MetaMask Browser Extension
 
 The project is based over [Crypto9](https://github.com/eddietio/crypto9), a project that was developed at the first ETHSingapre Hackathon in December, 2018.

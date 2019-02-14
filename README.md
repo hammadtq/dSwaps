@@ -23,7 +23,7 @@ You can see a [demo hosted over IPFS here](https://cloudflare-ipfs.com/ipfs/Qmah
 To get started with IPFS, see the [documentation](https://docs.ipfs.io/introduction/usage/).
 
 ## Kyber Documentation
-To understand the functions in ```functions/contract-functions.js```, please [Kyber Documentation](https://developer.kyber.network/docs/Start/).
+To understand the functions in ```functions/contract-functions.js```, please see [Kyber Documentation](https://developer.kyber.network/docs/Start/).
 
 ## Credits
 The project is based over [Crypto9](https://github.com/eddietio/crypto9), a project that was developed at the first ETHSingapre Hackathon in December, 2018.

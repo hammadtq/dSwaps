@@ -2,6 +2,46 @@
   Common functions across pages
 */
 
+//Cache-related variables - turn cache on/off from here or set your own URL
+//Set cache by default, user can toggle it from the button provided
+var ropstenCacheURL = "https://timski.org/dSwaps-reserves-cache/ropstenReserves.json?callback=?";
+var mainnetCacheURL = "https://timski.org/dSwaps-reserves-cache/mainnetReserves.json?callback=?";
+if(localStorage.getItem('cache_enabled') == 'undefined' || localStorage.getItem('cache_enabled') == null){
+  localStorage.setItem('cache_enabled', true);
+}
+window.cache_enabled = localStorage.getItem('cache_enabled');
+//set the button
+if(localStorage.getItem('cache_enabled') == "false"){
+  $('#cache_button').prop('checked', false);
+}else{
+  $('#cache_button').prop('checked', true);
+}
+$( "#cache_button" ).click(function() {
+    sessionStorage.clear();
+    localStorage.clear();
+    localStorage.setItem('cache_enabled', $("#cache_button").is(':checked'));
+    location.reload();
+});
+
+
+
+// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, false);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
 showLoadingModal = function(text){
   $("#loader-txt").html("<p>"+text+"</p>");
   $("#loadMe").modal({
@@ -34,6 +74,14 @@ handleResult = function(result, text=""){
   }
 }
 
+getReservesOnLoad = async function(){
+  if(sessionStorage.getItem('reserveTokenDetails') == null || sessionStorage.getItem('reserveTokenDetails') == undefined){
+    var reserveList = await getReserveList();
+    reserveTokenDetails = await getReserveDetails(reserveList);
+    sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
+  }
+}
+
 //remove sessionStorage on each network switch
 window.ethereum.on('networkChanged', function (netId) {
   if(sessionStorage.getItem('reserveTokenDetails') != undefined){
@@ -41,19 +89,28 @@ window.ethereum.on('networkChanged', function (netId) {
   }
 })
 
+window.ethereum.on('accountsChanged', function (accounts) {
+  location.reload();
+})
+
+
 setupNetwork = async function(){
 
   await web3.eth.net.getNetworkType().then(async function(value) {
     if(value == "ropsten"){
       $("#networkName").html("Ropsten");
       $("#networkAlert").removeClass('d-none');
+      window.cache_URL = ropstenCacheURL;
       chainAddresses = ropstenChainAddresses;
       await setupRopsten();
+      getReservesOnLoad();
     }else if(value == "main"){
       $("#networkName").html("Main Ethereum Network");
       $("#networkAlert").addClass('d-none');
+      window.cache_URL = mainnetCacheURL;
       chainAddresses = ethChainAddresses;
       await setupMainnet();
+      getReservesOnLoad();
     }else{
       $("#networkAlert").removeClass('d-none');
     }

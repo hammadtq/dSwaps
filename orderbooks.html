@@ -92,16 +92,21 @@
                                 <!-- end:: Brand -->
                                 <!-- begin:: Topbar -->
                                 <div class="k-header__topbar">
+                                  <!--begin: Quick Panel Toggler -->
+                                  <div class="k-header__topbar-item" data-toggle="k-tooltip" title="Quick panel" data-placement="top">
+                                      <div class="k-header__topbar-wrapper">
+                                          <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn"><i class="flaticon-grid-menu"></i></span>
+                                      </div>
+                                  </div>
+                                  <!--end: Quick Panel Toggler -->
                                     <!--begin: Network -->
                                     <div class="k-header__topbar-item k-header__topbar-item--langs">
                                         <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="20px 10px">
                                             <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="networkName">
                                               Network</button>
                                         </div>
-
                                     </div>
-                                    <!--end: Languages -->
-
+                                    <!--end: Network -->
                                 </div>
                                 <!-- end:: Topbar -->
                             </div>
@@ -244,6 +249,35 @@
         </div>
         <!-- end:: Page -->
 
+        <!-- begin:: Quick Panel -->
+        <div id="k_quick_panel" class="k-offcanvas-panel">
+            <div class="k-offcanvas-panel__nav">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item active"> <a class="nav-link active" data-toggle="tab" href="#k_quick_panel_tab_settings" role="tab">Settings</a> </li>
+                </ul>
+                <button class="k-offcanvas-panel__close" id="k_quick_panel_close_btn"><i class="flaticon2-delete"></i></button>
+            </div>
+            <div class="k-offcanvas-panel__body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show k-offcanvas-panel__content k-scroll active" id="k_quick_panel_tab_settings" role="tabpanel">
+                        <form class="k-form">
+                            <div class="k-heading k-heading--space-sm">Cache</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable cache:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_cache_1" id="cache_button">
+                                            <span></span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- end:: Quick Panel -->
         <!-- begin:: Scrolltop -->
         <div id="k_scrolltop" class="k-scrolltop"> <i class="la la-arrow-up"></i> </div>
@@ -303,7 +337,7 @@
         </div>
         <!-- Modal for Creating Reserves -->
         <div class="modal" id="createReserveModal">
-          <div class="modal-dialog modal-lg">
+          <div class="modal-dialog modal-md">
             <div class="modal-content">
 
               <!-- Modal Header -->
@@ -422,6 +456,9 @@
         <!--begin::Page Vendors(used by this page) -->
         <script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
         <!--end::Page Vendors -->
+        <!--begin::Global App Bundle(used by all pages) -->
+        <script src="./assets/app/scripts/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--end::Global App Bundle -->
 
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
         <script type="text/javascript" src="https://cdn.rawgit.com/indutny/bn.js/master/lib/bn.js"></script>
@@ -448,40 +485,82 @@
               }
             }
 
-            getTokenPrice = async function(reserveDetails){
+            getTokenPrice = async function(){
               var reserveTokenDetails = await getReserveTokenExpectedRate(reserveDetails);
               sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
               return reserveTokenDetails;
+            }
+
+            updateSessionStorageWithNewReserve = async function(token){
+              //insert the new reserve details in sessionStorage
+              var newReserveAddress = await getIndTokenReserveAddress(token);
+              var tokenDetails = await getTokenNameFromAddress(token);
+              var addInReserveTokenDetails = [newReserveAddress, token, tokenDetails];
+              var reserveTokenDetails = JSON.parse(sessionStorage.getItem('reserveTokenDetails'));
+              reserveTokenDetails.push(addInReserveTokenDetails);
+              sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
             }
 
 
             getReserves = async function(){
               if(sessionStorage.getItem('reserveTokenDetails') != undefined){
                 var reserveTokenDetails = JSON.parse(sessionStorage.getItem('reserveTokenDetails'));
-                reserveDetails = JSON.parse(sessionStorage.getItem('reserveDetails'));
+                //reserveDetails = JSON.parse(sessionStorage.getItem('reserveDetails'));
               }else{
-                toastr.info("Fetching permissionless reserves");
-                $('#loadingText').html("Fetching permissionless reserves");
-                var reserveList = await getReserveList();
-                toastr.info("Fetching token details");
-                $('#loadingText').html("Fetching token details");
-                reserveDetails = await getReserveDetails(reserveList);
-                sessionStorage.setItem('reserveDetails', JSON.stringify(reserveDetails));
-                toastr.info("Fetching current rates");
-                $('#loadingText').html("Fetching current rates");
-                var reserveTokenDetails = await getTokenPrice(reserveDetails);
-              }
+                if(cache_enabled === "true"){
+                  async function getReservesFromCache(){
+                    var xhr = createCORSRequest('GET', cache_URL);
+                    if (!xhr) {
+                      alert('CORS not supported, please disable cache parameter in common.js');
+                      return;
+                    }
+                    // Response handlers.
+                    xhr.onload = async function() {
+                      reserveTokenDetails = JSON.parse(xhr.responseText);
 
+                      //console.log('Response from CORS request to ' + cache_URL + ': ' + reserveTokenDetails);
+                    };
+                    xhr.onerror = function() {
+                      alert('Woops, there was an error making the request.');
+                    };
+                    xhr.send();
+                  }
+                  await getReservesFromCache();
+                }else{
+                  console.log("getreserves second");
+                  toastr.info("Fetching permissionless reserves");
+                  $('#loadingText').html("Fetching permissionless reserves");
+                  var reserveList = await getReserveList();
+                  toastr.info("Fetching token details");
+                  $('#loadingText').html("Fetching token details");
+                  reserveTokenDetails = await getReserveDetails(reserveList);
+                }
+                sessionStorage.setItem('reserveTokenDetails', JSON.stringify(reserveTokenDetails));
+                //toastr.info("Fetching current rates");
+                //$('#loadingText').html("Fetching current rates");
+                //var reserveTokenDetails = await getTokenPrice(reserveDetails);
+              }
               $('#loadingDiv').remove();
               var reservesArr = [];
               for (var i = 0; i < reserveTokenDetails.length; i++) {
                 var indReserveArr = [];
-                var tokenImage = reserveTokenDetails[i][2];
-                if(chainAddresses[tokenImage] == undefined){
-                  tokenImage = "No_image_available";
+                if(reserveTokenDetails[i][2]["tokenSymbol"] == undefined){
+                  var tokenImage = reserveTokenDetails[i][2];
+                  if(chainAddresses[tokenImage] == undefined){
+                    tokenImage = "No_image_available";
+                  }
+                  indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]+"</a>");
+                  //indReserveArr.push(reserveTokenDetails[i][3]);
+
+                }else{
+                  console.log(reserveTokenDetails[i][2]["tokenSymbol"]);
+                  var tokenImage = reserveTokenDetails[i][2]["tokenSymbol"];
+                  if(chainAddresses[tokenImage] == undefined){
+                    tokenImage = "No_image_available";
+                  }
+                  indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]["tokenSymbol"]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]["tokenSymbol"]+"</a>");
+
                 }
-                indReserveArr.push("<img src='./images/"+tokenImage.toLowerCase()+".svg' height='28' width='28'>&nbsp;<a href='./orderbookdetail.html?tokenSymbol="+reserveTokenDetails[i][2]+"&tokenAddress="+reserveTokenDetails[i][1]+"&reserveContractAddress="+reserveTokenDetails[i][0]+"'>"+reserveTokenDetails[i][2]+"</a>");
-                indReserveArr.push(reserveTokenDetails[i][3]);
                 reservesArr.push(indReserveArr);
               }
 
@@ -493,8 +572,7 @@
               reservesTable = $('#reservesList').DataTable({
                           data: reservesArr,
                           columns: [
-                              {title: "Token"},
-                              {title: "Price"}
+                              {title: "Token"}
                           ],
                           responsive: true
                       }
@@ -553,8 +631,11 @@
             refreshTokenPrice = async function(){
               sessionStorage.removeItem('reserveTokenDetails');
               var reserveTokenDetails = await getTokenPrice(reserveDetails);
+              console.log(reserveTokenDetails);
               //reservesTable.destroy();
               getReserves();
+              // var tokenPriceFromApi = await getTokenPrice();
+              // console.log(tokenPriceFromApi);
             }
 
             //refresh reserve button listener
@@ -574,7 +655,7 @@
               }else if(checkListingStage[1] == '3'){
                  errorModal("A reserve contract already exist for this token address");
               }else{
-                console.log(checkListingStage);
+                //console.log(checkListingStage);
 
                 if(checkListingStage[1] == '0'){
                   // add, init and list
@@ -590,6 +671,7 @@
                       var listOrderbookContract = await listOrderbook(token);
                       console.log(listOrderbookContract);
                       if(listOrderbookContract["transactionHash"] != undefined){
+                          updateSessionStorageWithNewReserve(token);
                           $("#createReserveModal").modal("hide");
                           successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
                       }else{
@@ -602,16 +684,14 @@
                     errorModal(addOrderbookContract);
                   }
                 }else if(checkListingStage[1] == '1'){
-                  console.log("I am here");
                     //just init and list
                     toastr.info("Initiating orderbook contract");
                     var initOrderbookContract = await initOrderbook(token);
-                    console.log(initOrderbookContract);
                     if(initOrderbookContract["transactionHash"] != undefined){
                       toastr.info("Listing orderbook contract");
                       var listOrderbookContract = await listOrderbook(token);
-                      console.log(listOrderbookContract);
                       if(listOrderbookContract["transactionHash"] != undefined){
+                          updateSessionStorageWithNewReserve(token);
                           $("#createReserveModal").modal("hide");
                           successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
                       }else{
@@ -627,8 +707,10 @@
                     var listOrderbookContract = await listOrderbook(token);
                     console.log(listOrderbookContract);
                     if(listOrderbookContract["transactionHash"] != undefined){
+                        updateSessionStorageWithNewReserve(token);
                         $("#createReserveModal").modal("hide");
                         successModal("New orderbook reserve has been added to the Kyber permissionless reserves!");
+
                     }else{
                       errorModal(listOrderbookContract);
                     }
@@ -641,7 +723,7 @@
               createReserve(createReserveTokenAddress);
 
               $("#successModal").on("hidden.bs.modal", function () {
-                  refreshReservesTable();
+                  getReserves();
               });
             });
 
@@ -649,7 +731,8 @@
               loadWeb3();
               await setupNetwork();
               await getReserves();
-              setInterval(function() { refreshTokenPrice(reserveDetails); }, 15000);
+              //refreshTokenPrice();
+              //setInterval(function() { refreshTokenPrice(reserveDetails); }, 15000);
               //getExpectedRateFromContract(); //load ETH-KNC rate at load
               $( "#submitSwap" ).click(async function() {
                 event.preventDefault();

@@ -95,6 +95,13 @@
                                 <!-- end:: Brand -->
                                 <!-- begin:: Topbar -->
                                 <div class="k-header__topbar">
+                                    <!--begin: Quick Panel Toggler -->
+                                    <div class="k-header__topbar-item" data-toggle="k-tooltip" title="Quick panel" data-placement="top">
+                                        <div class="k-header__topbar-wrapper">
+                                            <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn"><i class="flaticon-grid-menu"></i></span>
+                                        </div>
+                                    </div>
+                                    <!--end: Quick Panel Toggler -->
                                     <!--begin: Network -->
                                     <div class="k-header__topbar-item k-header__topbar-item--langs">
                                         <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="20px 10px">
@@ -370,6 +377,35 @@
         </div>
         <!-- end:: Page -->
 
+        <!-- begin:: Quick Panel -->
+        <div id="k_quick_panel" class="k-offcanvas-panel">
+            <div class="k-offcanvas-panel__nav">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item active"> <a class="nav-link active" data-toggle="tab" href="#k_quick_panel_tab_settings" role="tab">Settings</a> </li>
+                </ul>
+                <button class="k-offcanvas-panel__close" id="k_quick_panel_close_btn"><i class="flaticon2-delete"></i></button>
+            </div>
+            <div class="k-offcanvas-panel__body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show k-offcanvas-panel__content k-scroll active" id="k_quick_panel_tab_settings" role="tabpanel">
+                        <form class="k-form">
+                            <div class="k-heading k-heading--space-sm">Cache</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable cache:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_cache_1" id="cache_button">
+                                            <span></span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- end:: Quick Panel -->
         <!-- begin:: Scrolltop -->
         <div id="k_scrolltop" class="k-scrolltop"> <i class="la la-arrow-up"></i> </div>
@@ -388,15 +424,16 @@
 
               <!-- Modal body -->
               <div class="modal-body">
-                <form action="" id="balanceModalForm">
+                <form action="" id="balanceModalForm" autocomplete="off">
+                  <input autocomplete="false" name="hidden" type="text" style="display:none;">
                   <div class="form-group">
                     <label for="tokenAddress">Unused Balance:</label>
-                    <input type="text" class="form-control" id="withdrawBalanceAmount">
+                    <input type="number" class="form-control" id="withdrawBalanceAmount" step="any">
                     <button type="submit" id="withdrawBalanceModalBtn" class="btn btn-primary">Withdraw</button>
                   </div>
                   <div class="form-group">
                     <label for="tokenAddress">Deposit <span id="tokenDepositTitleInModal"></span>:</label>
-                    <input type="text" class="form-control" id="depositBalanceAmount">
+                    <input type="number" class="form-control" id="depositBalanceAmount" step="any">
                     <button type="submit" id="depositBalanceModalBtn" class="btn btn-primary">Deposit</button>
                   </div>
                 </form>
@@ -474,22 +511,23 @@
 
               <!-- Modal body -->
               <div class="modal-body">
-                <form action="" id="orderModalForm">
+                <form action="" id="orderModalForm" autocomplete="off">
+                  <input autocomplete="false" name="hidden" type="text" style="display:none;">
                   <input type="hidden" id="hiddenOrderId" value="">
                   <div class="form-group">
-                    <label for="sourceToken">Source Token:</label>
+                    <!--<label for="sourceToken">Source Token:</label>
                     <input type="text" class="form-control" id="sourceToken" required disabled>
                     <label for="destinationToken">Destination Token:</label>
-                    <input type="text" class="form-control" id="destinationToken" required disabled>
-                    <label for="currentExpectedRate">Current Expected Rate:</label>
-                    <div id="currentExpectedRate"></div>
-                    <label for="sourceTokenQuantity">Source Token Quantity:</label>
-                    <input type="text" class="form-control" id="sourceTokenQuantity" placeholder="0.00" required>
-                    <label for="destinationTokenQuantity">Destination Token Quantity:</label>
-                    <input type="text" class="form-control" id="destinationTokenQuantity" placeholder="0.00" required>
+                    <input type="text" class="form-control" id="destinationToken" required disabled>-->
+                    <label for="sourceTokenQuantity"><span id="sourceToken">Source</span> Token Quantity:</label>
+                    <input type="number" class="form-control" id="sourceTokenQuantity" placeholder="0.00" step="any" required>
+                    <label for="destinationTokenQuantity"><span id="destinationToken">Destination</span> Token Quantity:</label>
+                    <input type="number" class="form-control" id="destinationTokenQuantity" placeholder="0.00" step="any" required>
                     <label for="desiredRate">Desired Rate:</label>
-                    <span id="desiredRate">0.00</span><br/>
-                    <label for="orderValueUSD">Order Value (USD):</label>
+                    <input type="number" class="form-control" id="desiredRate" placeholder="0.00" step="any" required>
+                    <label for="currentExpectedRate">Current Expected Rate:</label>
+                    <span id="currentExpectedRate"></span><br/>
+                    <label for="orderValueUSD">Order Value [<span id="minOrderValue">&nbsp;Min Value: 2000 USD&nbsp;</span>]:</label>
                     <span id="orderValueUSD">0.00</span><br/>
                     <label for="expectedKNCFee">Expected KNC Fee:</label>
                     <span id="expectedKNCFee">0.00</span>
@@ -655,6 +693,9 @@
         <!--begin::Page Vendors(used by this page) -->
         <script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
         <!--end::Page Vendors -->
+        <!--begin::Global App Bundle(used by all pages) -->
+        <script src="./assets/app/scripts/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--end::Global App Bundle -->
 
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
         <script type="text/javascript" src="https://cdn.rawgit.com/indutny/bn.js/master/lib/bn.js"></script>
@@ -879,19 +920,19 @@
               //Switch order modal for buy/sell
               $( "#sellOrder, #buyOrder" ).click(function() {
                 $('#orderModalForm').trigger("reset");
-                $("#desiredRate").html("0.00");
+                //$("#desiredRate").val("0.00");
                 $("#orderValueUSD").html("0.00");
                 $("#expectedKNCFee").html("0.00");
                 $("#expectedKNCFee").css("background-color", "white");
                 $("#expectedKNCFee").css("color", "#646c9a");
                 if(this.id == "sellOrder"){
                   $("#orderModalTitle").html("Add Sell Order");
-                  $("#destinationToken").val("ETH");
-                  $("#sourceToken").val(tokenSymbol);
+                  $("#destinationToken").html("ETH");
+                  $("#sourceToken").html(tokenSymbol);
                 }else{
                   $("#orderModalTitle").html("Add Buy Order");
-                  $("#destinationToken").val(tokenSymbol);
-                  $("#sourceToken").val("ETH");
+                  $("#destinationToken").html(tokenSymbol);
+                  $("#sourceToken").html("ETH");
                 }
               });
 
@@ -902,8 +943,8 @@
                 var srcQty = $("#sourceTokenQuantity").val();
                 var destQty = $("#destinationTokenQuantity").val();
 
-                var srcToken = $("#sourceToken").val();
-                var destToken = $("#destinationToken").val();
+                var srcToken = $("#sourceToken").html();
+                var destToken = $("#destinationToken").html();
 
                 var modalTitle = $("#orderModalTitle").html();
 
@@ -912,12 +953,12 @@
                 var currentETHBalance = $("#eth-balance").html();
 
                 if(parseFloat(expectedKNCFee) > parseFloat(currentKNCBalance)){
-                  errorModal("You don't have enough KNC balance to cover this order, please deposit KNC balance using the dialog provided on the orderbook form!")
+                  errorModal("You don't have enough KNC balance to cover this order, please deposit KNC balance using the dialog provided on the orderbook page!")
                 }else{
                   $("#orderModal").modal("hide");
                   if(srcToken == "ETH"){
                     if(parseFloat(srcQty) > parseFloat(currentETHBalance)){
-                      errorModal("You don't have enough ETH balance to cover this order, please deposit ETH balance using the dialog provided on the orderbook form!")
+                      errorModal("You don't have enough ETH balance to cover this order, please deposit ETH balance using the dialog provided on the orderbook page!")
                     }else{
                       if(modalTitle == "Update Buy Order"){
                         //its an update buy order - EthToToken
@@ -976,18 +1017,48 @@
                 $("#currentExpectedRate").html(expectedRefRate);
               });
 
+              // $('#desiredRate').on('input propertychange paste', async function() {
+              //   console.log("yes");
+              //   var desiredRate = $("#desiredRate").val();
+              //   var medianizerRate = await getMedianizerEthRate();
+              //   if(!isNaN(parseInt(desiredRate, 10))){
+              //     console.log(desiredRate);
+              //     if($("#destinationToken").html() == "ETH"){
+              //
+              //       $("#sourceTokenQuantity").val('1').trigger('input');
+              //       $("#destinationTokenQuantity").val('2').trigger('input');
+              //     }else{
+              //       $("#sourceTokenQuantity").val('3').trigger('input');
+              //       $("#destinationTokenQuantity").val('4').trigger('input');
+              //     }
+              //   }
+              // });
+
               //Calcualte and show desired rate, orderValue and expected KNC stake
-              $('#sourceTokenQuantity, #destinationTokenQuantity').on('input propertychange paste', async function() {
+              $('#sourceTokenQuantity, #destinationTokenQuantity, #desiredRate').on('input propertychange paste', async function() {
                 var srcQty = $("#sourceTokenQuantity").val();
                 var destQty = $("#destinationTokenQuantity").val();
+                var desiredRate = $("#desiredRate").val();
                 var currentKNCBalance = $("#knc-balance").html();
                 var currentETHBalance = $("#eth-balance").html();
                 var medianizerRate = await getMedianizerEthRate();
-
-                if(!isNaN(parseInt(srcQty, 10)) && !isNaN(parseInt(destQty, 10))){
-                  var desiredRate = destQty/srcQty;
-                  $("#desiredRate").html(desiredRate);
-                  if($("#destinationToken").val() == "ETH"){
+                var triggeringId = $(this).attr('id');
+                if((!isNaN(parseInt(srcQty, 10)) && !isNaN(parseInt(destQty, 10))) || (!isNaN(parseInt(srcQty, 10)) && !isNaN(parseInt(desiredRate, 10))) || (!isNaN(parseInt(destQty, 10)) && !isNaN(parseInt(desiredRate, 10)))){
+                  if(!isNaN(parseInt(srcQty, 10)) && !isNaN(parseInt(destQty, 10)) && triggeringId != 'desiredRate'){
+                    var desiredRate = destQty/srcQty;
+                    $("#desiredRate").val(desiredRate);
+                  }else if(!isNaN(parseInt(srcQty, 10)) && !isNaN(parseInt(desiredRate, 10)) && triggeringId != 'destinationTokenQuantity'){
+                      destQty = srcQty*desiredRate;
+                      if(destQty != 0){
+                        $("#destinationTokenQuantity").val(destQty);
+                      }
+                  }else if(!isNaN(parseInt(destQty, 10)) && !isNaN(parseInt(desiredRate, 10)) && triggeringId != 'sourceTokenQuantity'){
+                      srcQty = destQty/desiredRate;
+                      if(srcQty != 0){
+                        $("#sourceTokenQuantity").val(srcQty);
+                      }
+                  }
+                  if($("#destinationToken").html() == "ETH" && !isNaN(parseInt(destQty, 10))){
                     var expectedKNCFee = await calcKncStakeValue(reserveContractAddress, ""+destQty+"");
                     $("#orderValueUSD").html(destQty * medianizerRate);
                     $("#expectedKNCFee").html(expectedKNCFee);
@@ -998,7 +1069,7 @@
                       $("#expectedKNCFee").css("background-color", "white");
                       $("#expectedKNCFee").css("color", "#646c9a");
                     }
-                  }else{
+                  }else if(!isNaN(parseInt(srcQty, 10))){
                     var expectedKNCFee = await calcKncStakeValue(reserveContractAddress, ""+srcQty+"");
                     $("#orderValueUSD").html(srcQty * medianizerRate);
                     $("#expectedKNCFee").html(expectedKNCFee);
@@ -1011,7 +1082,7 @@
                     }
                   }
                 }else{
-                  $("#desiredRate").html("0.00");
+                  //$("#desiredRate").val("0.00");
                   $("#orderValueUSD").html("0.00");
                   $("#expectedKNCFee").html("0.00");
                 }
@@ -1020,30 +1091,60 @@
               getOrderBookDetails = async function(){
                 toastr.info("Fetching balance information");
                 getBalance();
-                toastr.info("Fetching buy orders");
-                var ethToTokenArr = await getEtherToTokenOrderList(reserveContractAddress, tokenAddress);
                 toastr.info("Fetching sell orders");
                 var tokenToEthArr = await getTokenToEtherOrderList(reserveContractAddress, tokenAddress);
-                toastr.info("Fetching maker buy orders");
-                var ethToTokenMakerArr = await getEthToTokenMakerOrderList(reserveContractAddress, tokenAddress);
-                toastr.info("Fetching maker sell orders");
-                var tokenToEthMakerArr = await getTokenToEthMakerOrderList(reserveContractAddress, tokenAddress);
-                var indEthToTokenArr = [];
-                for (var i = 0; i < ethToTokenArr.length; i++) {
-                  var everyOrderArr = [];
-                  everyOrderArr.push(ethToTokenArr[i][0]);
-                  everyOrderArr.push(ethToTokenArr[i][1]);
-                  indEthToTokenArr.push(everyOrderArr);
-                }
-
                 var indTokenToEthArr = [];
                 for (var i = 0; i < tokenToEthArr.length; i++) {
                   var everyOrderArr = [];
                   everyOrderArr.push(tokenToEthArr[i][0]);
                   everyOrderArr.push(tokenToEthArr[i][1]);
+                  everyOrderArr.push(tokenToEthArr[i][1]/tokenToEthArr[i][0]);
                   indTokenToEthArr.push(everyOrderArr);
                 }
+                sellOrdersTable = $('#sell-orders').DataTable({
+                            data: indTokenToEthArr,
+                            //bPaginate: false,
+                            bFilter: false,
+                            bInfo: false,
+                            columns: [
+                                {title: tokenSymbol},
+                                {title: "ETH"},
+                                {title: "Rate"}
+                            ],
+                            responsive: true
+                        }
+                );
+                $('#loadingDiv-sell').remove();
+                toastr.info("Fetching buy orders");
+                var ethToTokenArr = await getEtherToTokenOrderList(reserveContractAddress, tokenAddress);
+                var indEthToTokenArr = [];
+                for (var i = 0; i < ethToTokenArr.length; i++) {
+                  var everyOrderArr = [];
+                  everyOrderArr.push(ethToTokenArr[i][0]);
+                  everyOrderArr.push(ethToTokenArr[i][1]);
+                  everyOrderArr.push(ethToTokenArr[i][1]/ethToTokenArr[i][0]);
+                  indEthToTokenArr.push(everyOrderArr);
+                }
 
+                buyOrdersTable = $('#buy-orders').DataTable({
+                            data: indEthToTokenArr,
+                            //bPaginate: false,
+                            bFilter: false,
+                            bInfo: false,
+                            columns: [
+                                {title: "ETH"},
+                                {title: tokenSymbol},
+                                {title: "Rate"}
+                            ],
+                            responsive: true
+                        }
+                      );
+                $('#loadingDiv-buy').remove();
+
+                toastr.info("Fetching maker buy orders");
+                var ethToTokenMakerArr = await getEthToTokenMakerOrderList(reserveContractAddress, tokenAddress);
+                toastr.info("Fetching maker sell orders");
+                var tokenToEthMakerArr = await getTokenToEthMakerOrderList(reserveContractAddress, tokenAddress);
                 var makerOrderArr = [];
                 orderNum = 1;
                 for (var i = 0; i < ethToTokenMakerArr.length; i++) {
@@ -1069,39 +1170,15 @@
                   orderNum++;
                 }
 
-                buyOrdersTable = $('#buy-orders').DataTable({
-                            data: indEthToTokenArr,
-                            //bPaginate: false,
-                            bFilter: false,
-                            bInfo: false,
-                            columns: [
-                                {title: "ETH"},
-                                {title: tokenSymbol}
-                            ],
-                            responsive: true
-                        }
-                      );
-                  $('#loadingDiv-buy').remove();
-                sellOrdersTable = $('#sell-orders').DataTable({
-                            data: indTokenToEthArr,
-                            //bPaginate: false,
-                            bFilter: false,
-                            bInfo: false,
-                            columns: [
-                                {title: tokenSymbol},
-                                {title: "ETH"}
-                            ],
-                            responsive: true
-                        }
-                );
-                  $('#loadingDiv-sell').remove();
+
+
 
                 myOrdersTable = $('#my-orders').DataTable({
                             data: makerOrderArr,
                             bFilter: false,
                             bInfo: false,
                             targets: 'no-sort',
-                            bSort: false,
+                            bSort: true,
                             columns: [
                                 {title: "#"},
                                 {title: "Src. Qty"},
@@ -1116,9 +1193,9 @@
                   $('#loadingDiv-myOrders').remove();
 
                   //Capture update
-                  $('button:contains("Update")').click(async function() {
+                  $('#my-orders tbody').on('click', 'button:contains("Update")', async function () {
                     $('#orderModalForm').trigger("reset");
-                    $("#desiredRate").html("0.00");
+                    //$("#desiredRate").val("0.00");
                     $("#orderValueUSD").html("0.00");
                     $("#expectedKNCFee").html("0.00");
                     $("#expectedKNCFee").css("background-color", "white");
@@ -1133,11 +1210,11 @@
                     $("#destinationTokenQuantity").val(destQty);
                     $("#hiddenOrderId").val(value[1]);
                     var desiredRate = destQty/srcQty;
-                    $("#desiredRate").html(desiredRate);
+                    $("#desiredRate").val(desiredRate);
                     if(value[0] == "Buy"){
                       $("#orderModalTitle").html("Update Buy Order");
-                      $("#sourceToken").val("ETH");
-                      $("#destinationToken").val(tokenSymbol);
+                      $("#sourceToken").html("ETH");
+                      $("#destinationToken").html(tokenSymbol);
                       var expectedKNCFee = await calcKncStakeValue(reserveContractAddress, ""+srcQty+"");
                       $("#orderValueUSD").html(srcQty * medianizerRate);
                       $("#expectedKNCFee").html(expectedKNCFee);
@@ -1151,8 +1228,8 @@
                       $("#orderModal").modal("show");
                     }else{
                       $("#orderModalTitle").html("Update Sell Order");
-                      $("#destinationToken").val("ETH");
-                      $("#sourceToken").val(tokenSymbol);
+                      $("#destinationToken").html("ETH");
+                      $("#sourceToken").html(tokenSymbol);
                       var expectedKNCFee = await calcKncStakeValue(reserveContractAddress, ""+destQty+"");
                       $("#orderValueUSD").html(destQty * medianizerRate);
                       $("#expectedKNCFee").html(expectedKNCFee);
@@ -1168,8 +1245,7 @@
                   });
 
                   //Capture and handle cancel order
-                  $('button:contains("Cancel")').click(function() {
-                    console.log(this.value);
+                  $('#my-orders tbody').on('click', 'button:contains("Cancel")', async function () {
                     var value = this.value.split('-');
                     var orderId = value[1];
                     if(value[0] == "Buy"){

@@ -908,3 +908,20 @@ window.listOrderbook = async function(token){
 
 	return result;
 }
+
+//get individual order reserve details if we have the token address
+window.getIndTokenReserveAddress = async function(token){
+	console.log("getIndTokenReserveAddress");
+	var result = "";
+	var isAddress = web3.utils.isAddress(token);
+	if(isAddress){
+		try{
+			var result = await OrderbookContractReserveInstance.methods.reserves(token).call();
+		}catch (err){
+			result = err;
+		}
+	}else{
+		result = "invalid_address";
+	}
+	return result;
+}

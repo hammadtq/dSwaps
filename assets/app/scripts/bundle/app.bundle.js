@@ -4,40 +4,40 @@ var KDemoPanel = function() {
 
     var init = function() {
         offcanvas = new KOffcanvas(demoPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-demo-panel',
             closeBy: 'k_demo_panel_close',
             toggleBy: 'k_demo_panel_toggle'
-        }); 
+        });
 
         var head = KUtil.find(demoPanel, '.k-demo-panel__head');
         var body = KUtil.find(demoPanel, '.k-demo-panel__body');
 
         KUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KUtil.actualHeight(head));
                     height = height - parseInt(KUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KUtil.css(demoPanel, 'paddingTop'));
-                height = height - parseInt(KUtil.css(demoPanel, 'paddingBottom'));    
+                height = height - parseInt(KUtil.css(demoPanel, 'paddingBottom'));
 
                 return height;
             }
         });
 
         if (typeof offcanvas !== 'undefined') {
-            offcanvas.on('hide', function() {
-                alert(1);
-                var expires = new Date(new Date().getTime() + 60 * 60 * 1000); // expire in 60 minutes from now
-                Cookies.set('k_demo_panel_shown', 1, { expires: expires });
-            });
+            // offcanvas.on('hide', function() {
+            //     alert(1);
+            //     var expires = new Date(new Date().getTime() + 60 * 60 * 1000); // expire in 60 minutes from now
+            //     Cookies.set('k_demo_panel_shown', 1, { expires: expires });
+            // });
         }
     }
 
@@ -51,13 +51,13 @@ var KDemoPanel = function() {
                 var expires = new Date(new Date().getTime() + 15 * 60 * 1000); // expire in 15 minutes from now
                 Cookies.set('k_demo_panel_shown', 1, { expires: expires });
                 offcanvas.show();
-            } 
+            }
         }, 4000);
     }
 
-    return {     
-        init: function() {  
-            init(); 
+    return {
+        init: function() {
+            init();
             remind();
         }
     };
@@ -108,11 +108,11 @@ var KLib = function() {
                         mode: 'nearest',
                         bodySpacing: 5,
                         yPadding: 10,
-                        xPadding: 10, 
+                        xPadding: 10,
                         caretPadding: 0,
                         displayColors: false,
                         backgroundColor: KApp.getStateColor('brand'),
-                        titleFontColor: '#ffffff', 
+                        titleFontColor: '#ffffff',
                         cornerRadius: 4,
                         footerSpacing: 0,
                         titleSpacing: 0
@@ -211,11 +211,11 @@ var KLib = function() {
                         mode: 'nearest',
                         bodySpacing: 5,
                         yPadding: 10,
-                        xPadding: 10, 
+                        xPadding: 10,
                         caretPadding: 0,
                         displayColors: false,
                         backgroundColor: KApp.getStateColor('brand'),
-                        titleFontColor: '#ffffff', 
+                        titleFontColor: '#ffffff',
                         cornerRadius: 4,
                         footerSpacing: 0,
                         titleSpacing: 0
@@ -299,26 +299,26 @@ var KOffcanvasPanel = function() {
         var body = KUtil.find(notificationPanel, '.k-offcanvas-panel__body');
 
         var offcanvas = new KOffcanvas(notificationPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-offcanvas-panel',
             closeBy: 'k_offcanvas_toolbar_notifications_close',
             toggleBy: 'k_offcanvas_toolbar_notifications_toggler_btn'
-        }); 
+        });
 
         KUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KUtil.actualHeight(head));
                     height = height - parseInt(KUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KUtil.css(notificationPanel, 'paddingTop'));
-                height = height - parseInt(KUtil.css(notificationPanel, 'paddingBottom'));    
+                height = height - parseInt(KUtil.css(notificationPanel, 'paddingBottom'));
 
                 return height;
             }
@@ -330,26 +330,26 @@ var KOffcanvasPanel = function() {
         var body = KUtil.find(quickActionsPanel, '.k-offcanvas-panel__body');
 
         var offcanvas = new KOffcanvas(quickActionsPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-offcanvas-panel',
             closeBy: 'k_offcanvas_toolbar_quick_actions_close',
             toggleBy: 'k_offcanvas_toolbar_quick_actions_toggler_btn'
-        }); 
+        });
 
         KUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KUtil.actualHeight(head));
                     height = height - parseInt(KUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KUtil.css(quickActionsPanel, 'paddingTop'));
-                height = height - parseInt(KUtil.css(quickActionsPanel, 'paddingBottom'));    
+                height = height - parseInt(KUtil.css(quickActionsPanel, 'paddingBottom'));
 
                 return height;
             }
@@ -361,26 +361,26 @@ var KOffcanvasPanel = function() {
         var body = KUtil.find(profilePanel, '.k-offcanvas-panel__body');
 
         var offcanvas = new KOffcanvas(profilePanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-offcanvas-panel',
             closeBy: 'k_offcanvas_toolbar_profile_close',
             toggleBy: 'k_offcanvas_toolbar_profile_toggler_btn'
-        }); 
+        });
 
         KUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KUtil.actualHeight(head));
                     height = height - parseInt(KUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KUtil.css(profilePanel, 'paddingTop'));
-                height = height - parseInt(KUtil.css(profilePanel, 'paddingBottom'));    
+                height = height - parseInt(KUtil.css(profilePanel, 'paddingBottom'));
 
                 return height;
             }
@@ -395,16 +395,16 @@ var KOffcanvasPanel = function() {
         var wrapper = KUtil.find(search, '.k-quick-search__wrapper');
 
         var offcanvas = new KOffcanvas(searchPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-offcanvas-panel',
             closeBy: 'k_offcanvas_toolbar_search_close',
             toggleBy: 'k_offcanvas_toolbar_search_toggler_btn'
-        }); 
+        });
 
         KUtil.scrollInit(wrapper, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KUtil.getViewPort().height);
 
@@ -415,18 +415,18 @@ var KOffcanvasPanel = function() {
                     height = height - parseInt(KUtil.actualHeight(head));
                     height = height - parseInt(KUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KUtil.css(searchPanel, 'paddingTop'));
-                height = height - parseInt(KUtil.css(searchPanel, 'paddingBottom'));    
+                height = height - parseInt(KUtil.css(searchPanel, 'paddingBottom'));
 
                 return height;
             }
         });
     }
 
-    return {     
-        init: function() {  
-            initNotifications(); 
+    return {
+        init: function() {
+            initNotifications();
             initQucikActions();
             initProfile();
             initSearch();
@@ -448,10 +448,10 @@ var KQuickPanel = function() {
         var nav = KUtil.find(panel, '.k-offcanvas-panel__nav');
         var content = KUtil.find(panel, '.k-offcanvas-panel__body');
 
-        height = parseInt(KUtil.getViewPort().height) - 
-                 parseInt(KUtil.actualHeight(nav)) - 
+        height = parseInt(KUtil.getViewPort().height) -
+                 parseInt(KUtil.actualHeight(nav)) -
                  parseInt(KUtil.css(nav, 'margin-bottom')) -
-                 (2 * parseInt(KUtil.css(nav, 'padding-top'))) - 
+                 (2 * parseInt(KUtil.css(nav, 'padding-top'))) -
                  10;
 
         return height;
@@ -459,18 +459,18 @@ var KQuickPanel = function() {
 
     var initOffcanvas = function() {
         var offcanvas = new KOffcanvas(panel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'k-offcanvas-panel',
             closeBy: 'k_quick_panel_close_btn',
             toggleBy: 'k_quick_panel_toggler_btn'
-        });   
+        });
     }
 
     var initNotifications = function() {
         KUtil.scrollInit(notificationPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -479,9 +479,9 @@ var KQuickPanel = function() {
 
     var initActions = function() {
         KUtil.scrollInit(actionsPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -490,9 +490,9 @@ var KQuickPanel = function() {
 
     var initSettings = function() {
         KUtil.scrollInit(settingsPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -500,16 +500,16 @@ var KQuickPanel = function() {
     }
 
     var updatePerfectScrollbars = function() {
-        $(panel).find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) { 
+        $(panel).find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
             KUtil.scrollUpdate(notificationPanel);
             KUtil.scrollUpdate(actionsPanel);
             KUtil.scrollUpdate(settingsPanel);
         });
     }
 
-    return {     
-        init: function() {  
-            initOffcanvas(); 
+    return {
+        init: function() {
+            initOffcanvas();
             initNotifications();
             initActions();
             initSettings();
@@ -534,21 +534,21 @@ var KQuickSearch = function() {
     var inputGroup;
     var query = '';
 
-    var hasResult = false; 
-    var timeout = false; 
+    var hasResult = false;
+    var timeout = false;
     var isProcessing = false;
-    var requestTimeout = 200; // ajax request fire timeout in milliseconds 
+    var requestTimeout = 200; // ajax request fire timeout in milliseconds
     var spinnerClass = 'k-spinner k-spinner--input k-spinner--sm k-spinner--brand k-spinner--right';
     var resultClass = 'k-quick-search--has-result';
     var minLength = 2;
 
     var showProgress = function() {
         isProcessing = true;
-        KUtil.addClass(inputGroup, spinnerClass); 
+        KUtil.addClass(inputGroup, spinnerClass);
 
         if (closeIcon) {
             KUtil.hide(closeIcon);
-        }       
+        }
     }
 
     var hideProgress = function() {
@@ -560,14 +560,14 @@ var KQuickSearch = function() {
                 KUtil.hide(closeIcon);
             } else {
                 KUtil.show(closeIcon, 'flex');
-            }            
+            }
         }
     }
 
     var showDropdown = function() {
         if (resultDropdownToggle && !KUtil.hasClass(resultDropdown, 'show')) {
             $(resultDropdownToggle).dropdown('toggle');
-            $(resultDropdownToggle).dropdown('update'); 
+            $(resultDropdownToggle).dropdown('update');
         }
     }
 
@@ -578,7 +578,7 @@ var KQuickSearch = function() {
     }
 
     var processSearch = function() {
-        if (hasResult && query === input.value) {  
+        if (hasResult && query === input.value) {
             hideProgress();
             KUtil.addClass(target, resultClass);
             showDropdown();
@@ -592,7 +592,7 @@ var KQuickSearch = function() {
         KUtil.removeClass(target, resultClass);
         showProgress();
         hideDropdown();
-        
+
         setTimeout(function() {
             $.ajax({
                 url: 'inc/api/quick_search.php',
@@ -617,7 +617,7 @@ var KQuickSearch = function() {
                     KUtil.scrollUpdate(resultWrapper);
                 }
             });
-        }, 1000);       
+        }, 1000);
     }
 
     var handleCancel = function(e) {
@@ -647,20 +647,20 @@ var KQuickSearch = function() {
 
         timeout = setTimeout(function() {
             processSearch();
-        }, requestTimeout);     
+        }, requestTimeout);
     }
 
-    return {     
-        init: function(element) { 
+    return {
+        init: function(element) {
             // Init
             target = element;
             form = KUtil.find(target, '.k-quick-search__form');
             input = KUtil.find(target, '.k-quick-search__input');
             closeIcon = KUtil.find(target, '.k-quick-search__close');
             resultWrapper = KUtil.find(target, '.k-quick-search__wrapper');
-            resultDropdown = KUtil.find(target, '.dropdown-menu'); 
+            resultDropdown = KUtil.find(target, '.dropdown-menu');
             resultDropdownToggle = KUtil.find(target, '[data-toggle="dropdown"]');
-            inputGroup = KUtil.find(target, '.input-group');           
+            inputGroup = KUtil.find(target, '.input-group');
 
             // Attach input keyup handler
             KUtil.addEvent(input, 'keyup', handleSearch);
@@ -668,13 +668,13 @@ var KQuickSearch = function() {
 
             // Prevent enter click
             form.onkeypress = function(e) {
-                var key = e.charCode || e.keyCode || 0;     
+                var key = e.charCode || e.keyCode || 0;
                 if (key == 13) {
                     e.preventDefault();
                 }
             }
-           
-            KUtil.addEvent(closeIcon, 'click', handleCancel);     
+
+            KUtil.addEvent(closeIcon, 'click', handleCancel);
         }
     };
 };

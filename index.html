@@ -89,6 +89,13 @@
                                 <!-- end:: Brand -->
                                 <!-- begin:: Topbar -->
                                 <div class="k-header__topbar">
+                                    <!--begin: Quick Panel Toggler -->
+                                    <div class="k-header__topbar-item" data-toggle="k-tooltip" title="Quick panel" data-placement="top">
+                                        <div class="k-header__topbar-wrapper">
+                                            <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn"><i class="flaticon-grid-menu"></i></span>
+                                        </div>
+                                    </div>
+                                    <!--end: Quick Panel Toggler -->
                                     <!--begin: Network -->
                                     <div class="k-header__topbar-item k-header__topbar-item--langs">
                                         <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="20px 10px">
@@ -414,7 +421,35 @@
             </div>
         </div>
         <!-- end:: Page -->
-
+        <!-- begin:: Quick Panel -->
+        <div id="k_quick_panel" class="k-offcanvas-panel">
+            <div class="k-offcanvas-panel__nav">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item active"> <a class="nav-link active" data-toggle="tab" href="#k_quick_panel_tab_settings" role="tab">Settings</a> </li>
+                </ul>
+                <button class="k-offcanvas-panel__close" id="k_quick_panel_close_btn"><i class="flaticon2-delete"></i></button>
+            </div>
+            <div class="k-offcanvas-panel__body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show k-offcanvas-panel__content k-scroll active" id="k_quick_panel_tab_settings" role="tabpanel">
+                        <form class="k-form">
+                            <div class="k-heading k-heading--space-sm">Cache</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable cache:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_cache_1" id="cache_button">
+                                            <span></span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- end:: Quick Panel -->
         <!-- begin:: Scrolltop -->
         <div id="k_scrolltop" class="k-scrolltop"> <i class="la la-arrow-up"></i> </div>
@@ -565,6 +600,9 @@
 <!--begin::Global Theme Bundle(used by all pages) -->
 
         <script src="./assets/demo/demo3/base/scripts.bundle.js" type="text/javascript"></script>
+        <!--begin::Global App Bundle(used by all pages) -->
+        <script src="./assets/app/scripts/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--end::Global App Bundle -->
 
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
         <script type="text/javascript" src="https://cdn.rawgit.com/indutny/bn.js/master/lib/bn.js"></script>

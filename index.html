@@ -152,7 +152,11 @@
                         							<div class="alert-icon"><i class="flaticon-warning"></i></div>
                         						  	<div class="alert-text">You are on a test network! Please switch to Main Ethereum Network from your MetaMask extension to use dSwaps on the mainnet.</div>
                         						</div>
-                                    <div class="k-portlet k-portlet--height-fluid">
+                                    <div class="alert alert-danger d-none" role="alert" id="metaMaskAlert">
+                        							<div class="alert-icon"><i class="flaticon-warning"></i></div>
+                        						  	<div class="alert-text">This website needs MetaMask browser extension to be installed!</div>
+                        						</div>
+                                    <div class="k-portlet">
                                       <div class="k-portlet__head k-portlet__head--noborder">
                                           <div class="k-portlet__head-label">
                                               <h3 class="k-portlet__head-title">
@@ -666,6 +670,7 @@
               // Non-dapp browsers...
               else {
                   console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                  $("#metaMaskAlert").removeClass('d-none');
               }
             }
             toastr.options = {

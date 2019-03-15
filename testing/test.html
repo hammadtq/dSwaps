@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+</head>
+<body>
+<div id="mocha"></div>
+
+<script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+<script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/indutny/bn.js/master/lib/bn.js"></script>
+
+<script>mocha.setup('bdd')</script>
+<script src="../functions/contract-functions.js"></script>
+<script src="contract.test.js"></script>
+<script>
+    loadWeb3 = async function(){
+          // Modern dapp browsers...
+      if (window.ethereum) {
+          window.web3 = new Web3(ethereum);
+          try {
+              // Request account access if needed
+              await ethereum.enable();
+              // Acccounts now exposed
+              //web3.eth.sendTransaction({/* ... */});
+          } catch (error) {
+              // User denied account access...
+          }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+          window.web3 = new Web3(web3.currentProvider);
+
+          // Acccounts always exposed
+          //web3.eth.sendTransaction({/* ... */});
+      }
+      // Non-dapp browsers...
+      else {
+          console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+          $("#metaMaskAlert").removeClass('d-none');
+      }
+    }
+    $(document).ready(async function($) {
+      loadWeb3();
+      await setupRopsten();
+      mocha.checkLeaks();
+      mocha.run();
+    });
+
+</script>
+</body>
+</html>

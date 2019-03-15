@@ -509,6 +509,7 @@
             getReserves = async function(){
               if(sessionStorage.getItem('reserveTokenDetails') != undefined){
                 var reserveTokenDetails = JSON.parse(sessionStorage.getItem('reserveTokenDetails'));
+                console.log("in reserves");
                 //reserveDetails = JSON.parse(sessionStorage.getItem('reserveDetails'));
               }else{
                 if(cache_enabled === "true"){

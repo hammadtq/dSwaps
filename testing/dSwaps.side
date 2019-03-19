@@ -1,0 +1,1738 @@
+{
+  "id": "4570a5a4-c4b3-43be-a6c4-4a52dea44921",
+  "version": "2.0",
+  "name": "dSwaps",
+  "url": "https://dswaps.com",
+  "tests": [{
+    "id": "af66842b-dfeb-4ffb-82dc-6c97cf3c488e",
+    "name": "Test swaps",
+    "commands": [{
+      "id": "f08d3e2f-1bc2-413d-81fb-7cf97f55f8ce",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fbdff4dd-3fbd-4987-a6bd-ead482a0ce0f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79f0ea90-ca45-49ed-a031-c5ec4e179a9b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(1) > .input-group .btn",
+      "targets": [
+        ["css=.col:nth-child(1) > .input-group .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/div/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'ETH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97bb4af6-9719-42b2-8bca-3740abb442e8",
+      "comment": "",
+      "command": "type",
+      "target": "css=.show > .bs-searchbox > .form-control",
+      "targets": [
+        ["css=.show > .bs-searchbox > .form-control", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "knc"
+    }, {
+      "id": "27cc592f-4c2f-4876-a112-415127f627fa",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "css=.show > .bs-searchbox > .form-control",
+      "targets": [
+        ["css=.show > .bs-searchbox > .form-control", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "0875c72a-3725-4db5-9a64-342abee722e2",
+      "comment": "",
+      "command": "select",
+      "target": "id=srcToken",
+      "targets": [],
+      "value": "label=KNC"
+    }, {
+      "id": "4e8083e1-bf45-4e13-8c49-34981f10549f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(2) .filter-option-inner-inner",
+      "targets": [
+        ["css=.col:nth-child(2) .filter-option-inner-inner", "css:finder"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div[2]/div/div/button/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/button/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73c38881-895f-4994-ad0e-41f8c9ad022b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=IOST",
+      "targets": [
+        ["linkText=IOST", "linkText"],
+        ["css=li:nth-child(24) > .dropdown-item", "css:finder"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div[2]/div/div/div/div[2]/ul/li[24]/a", "xpath:idRelative"],
+        ["xpath=//li[24]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'IOST')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2b2565-eae2-4f03-8af7-19ad0bbadd42",
+      "comment": "",
+      "command": "select",
+      "target": "id=destToken",
+      "targets": [],
+      "value": "label=IOST"
+    }, {
+      "id": "aa50279c-4fd7-4ebc-8b51-14ec1ca60cfd",
+      "comment": "",
+      "command": "click",
+      "target": "id=srcQty",
+      "targets": [
+        ["id=srcQty", "id"],
+        ["name=srcQty", "name"],
+        ["css=#srcQty", "css:finder"],
+        ["xpath=//input[@id='srcQty']", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "058f3c36-d0cf-44ae-87a6-cae41ad72b61",
+      "comment": "",
+      "command": "type",
+      "target": "id=srcQty",
+      "targets": [
+        ["id=srcQty", "id"],
+        ["name=srcQty", "name"],
+        ["css=#srcQty", "css:finder"],
+        ["xpath=//input[@id='srcQty']", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div/div/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "a7dde9c9-5004-4549-8e03-d2750229e8ac",
+      "comment": "",
+      "command": "click",
+      "target": "id=submitSwap",
+      "targets": [
+        ["id=submitSwap", "id"],
+        ["name=submitSwap", "name"],
+        ["css=#submitSwap", "css:finder"],
+        ["xpath=//button[@id='submitSwap']", "xpath:attributes"],
+        ["xpath=//div[@id='k_body']/div/div[2]/div[3]/div[2]/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Swap Tokens »')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5eeb7f5c-6d61-4d25-9f0a-d353d2aa2aff",
+    "name": "Test deposit KNC fee",
+    "commands": [{
+      "id": "c555c77d-f4f3-4e95-a2d4-7d802ae990f9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a694c29-0c62-4f3a-ae18-4b2db1374bd3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d4753df-c0f7-4810-a6bc-3335b32768f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a176453f-ba3a-4e05-b91e-e5718511f506",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37b2abc6-4558-4712-a81c-1683a73db71a",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ZIL"
+    }, {
+      "id": "a0af2984-60d3-4a67-bdf3-fc4fd418e3e2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70531d2b-70b1-432c-893e-2c64636fe46c",
+      "comment": "",
+      "command": "click",
+      "target": "id=kncBalance",
+      "targets": [
+        ["id=kncBalance", "id"],
+        ["css=#kncBalance", "css:finder"],
+        ["xpath=//button[@id='kncBalance']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[3]/div[2]/div/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'KNC: 0')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ed66e4b-b8d8-4351-b43f-17ca92a46c70",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41ed016a-7faf-4c4d-a7b9-b7d256835d21",
+      "comment": "",
+      "command": "type",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "a07619cf-3526-481b-bca2-4ea504995dc2",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceModalBtn",
+      "targets": [
+        ["id=depositBalanceModalBtn", "id"],
+        ["css=#depositBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='depositBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//form/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Deposit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9fe1969a-8411-4cd7-9b45-7624deb9126e",
+    "name": "Test deposit ETH",
+    "commands": [{
+      "id": "4bb53e85-124e-45ea-8733-b562882453bc",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5995813a-b1db-4579-907b-15f6d8103783",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "026666dd-d455-47c9-b66a-f973a8480069",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cb47488-f1c5-4970-8fed-704b3f04f750",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c88a273-407f-43fc-87c8-0dd8ac9eb1b2",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "01cd9449-5edc-4ae2-8591-b0b772723ca5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48fe48e8-eb02-44c8-b91b-61d27348cfca",
+      "comment": "",
+      "command": "click",
+      "target": "id=eth-balance",
+      "targets": [
+        ["id=eth-balance", "id"],
+        ["css=#eth-balance", "css:finder"],
+        ["xpath=//span[@id='eth-balance']", "xpath:attributes"],
+        ["xpath=//button[@id='ethBalance']/span", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'3.755')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c4dd30c-bc66-4a7f-bb91-305fa07a5d57",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d37bdc61-65d5-4974-a3c0-ba6857e6eed6",
+      "comment": "",
+      "command": "type",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "0.00012"
+    }, {
+      "id": "9e5b4449-5c05-431c-a021-fc8f2c09e066",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceModalBtn",
+      "targets": [
+        ["id=depositBalanceModalBtn", "id"],
+        ["css=#depositBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='depositBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//form/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Deposit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3d5ecf9a-d958-47f5-8146-040c6a786124",
+    "name": "Test deposit ZIL token",
+    "commands": [{
+      "id": "fa200c57-879d-4fd5-a0c3-7ec08ca43f08",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2d1fb90-2929-42aa-9485-c8bc9b359ae1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c92a00a-7cb4-468b-8b86-ca7ecde4ec40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd422c9-5f71-49dd-b5f4-305897bbb728",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6283bd42-55ef-4ef1-a49c-70bbb4158103",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "a1d866a1-d9b4-4ecc-9623-daf90aa7585e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sorting_1",
+      "targets": [
+        ["css=.sorting_1", "css:finder"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,' ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5e35191-6cd0-4f65-997b-8a33da90ffe9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9796e24-1fe1-4f40-8950-d407b2ac2521",
+      "comment": "",
+      "command": "click",
+      "target": "id=token-balance",
+      "targets": [
+        ["id=token-balance", "id"],
+        ["css=#token-balance", "css:finder"],
+        ["xpath=//span[@id='token-balance']", "xpath:attributes"],
+        ["xpath=//button[@id='tokenBalance']/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'70008.09039199958')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "884d9628-8f87-44b3-becf-72a20cafa559",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c233d187-f90d-4216-ba93-a4e1c88d455e",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bc722b4-0396-4141-9c41-aa726640e8a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4990ccb-3999-4cc0-8409-1a57aa1e7e4e",
+      "comment": "",
+      "command": "type",
+      "target": "id=depositBalanceAmount",
+      "targets": [
+        ["id=depositBalanceAmount", "id"],
+        ["css=#depositBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='depositBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1.00"
+    }, {
+      "id": "7d98f3c7-1ac0-4237-806c-df0a220b3d1f",
+      "comment": "",
+      "command": "click",
+      "target": "id=depositBalanceModalBtn",
+      "targets": [
+        ["id=depositBalanceModalBtn", "id"],
+        ["css=#depositBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='depositBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//form/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Deposit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ae850876-93c9-4212-a538-a00a0d4f0406",
+    "name": "Test withdraw ETH",
+    "commands": [{
+      "id": "01a2441e-6f3c-4011-b42d-c7b5b0965bed",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fef290e5-810d-412e-9a96-75ae3c027292",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a5296ec-85a2-4836-8a6d-6f4f3b595f13",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "918ad8b5-c014-4bfa-b796-517d292e1b63",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b3808f2-62ac-4b94-93d6-bf5717cc535c",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "edf070d2-7e3f-4a17-bc5b-fc7bba346348",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3009318-cab4-40a0-bff2-602230318cb4",
+      "comment": "",
+      "command": "click",
+      "target": "id=eth-balance",
+      "targets": [
+        ["id=eth-balance", "id"],
+        ["css=#eth-balance", "css:finder"],
+        ["xpath=//span[@id='eth-balance']", "xpath:attributes"],
+        ["xpath=//button[@id='ethBalance']/span", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'3.755')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "936e1ade-94f1-42c8-9bda-3e801fbf7500",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee22bcc4-c514-42f3-b14a-77e8c06fb8b2",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9c5b92e-3140-4520-8369-a1ac3d68bef9",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7d33d0a-8ab4-45d3-b2cc-f9d6e0c706e5",
+      "comment": "",
+      "command": "type",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "0.01"
+    }, {
+      "id": "6239e0f6-0242-4bf9-8803-654a9dc187d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceModalBtn",
+      "targets": [
+        ["id=withdrawBalanceModalBtn", "id"],
+        ["css=#withdrawBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='withdrawBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Withdraw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "95dfc028-9e34-4cfe-8477-812e60744c93",
+    "name": "Test withdraw ZIL token",
+    "commands": [{
+      "id": "0edd2384-1f11-40a1-8ac4-dc6b697bf02f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "138202eb-6e61-4cae-aab9-04f83bcdc1b2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61f8ed21-0953-4920-91f8-13e64eab907e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e61b63a-c5b6-4b44-a4fc-dbe39c6e2672",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13ae5e82-b134-438a-8eab-12d18bc334b1",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "716132a8-b0aa-41e5-a390-97a7ddd7a781",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a50e55b-667a-4d9a-bd0f-488b056ba8a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=token-balance",
+      "targets": [
+        ["id=token-balance", "id"],
+        ["css=#token-balance", "css:finder"],
+        ["xpath=//span[@id='token-balance']", "xpath:attributes"],
+        ["xpath=//button[@id='tokenBalance']/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'70008.09039199958')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d37f289b-5eca-4676-8d4d-c7be0e74fc47",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96a2a267-1bf6-468d-8ff8-fa365633eee0",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecfad40a-98d3-408e-aa43-961d32b559b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fa6ae07-3256-4c57-bcf2-93162e7a1c37",
+      "comment": "",
+      "command": "type",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "22c9ac74-11f0-4184-bedf-3a558e7104ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceModalBtn",
+      "targets": [
+        ["id=withdrawBalanceModalBtn", "id"],
+        ["css=#withdrawBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='withdrawBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Withdraw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac02ca2e-501e-4415-b519-6b347b2a7a7b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a72da80e-8246-4320-a5af-3e63e108cfb3",
+    "name": "Test withdraw KNC fee",
+    "commands": [{
+      "id": "33b384a3-24f5-45ac-b9f7-67daa7988e0d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "611c16eb-b101-44d2-82d6-7191a6ada393",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1d0ccb2-9c5c-4036-9462-053b43549aab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Orderbooks",
+      "targets": [
+        ["linkText=Orderbooks", "linkText"],
+        ["css=.k-menu__item:nth-child(2) > .k-menu__link", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'orderbooks.html')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf4c0b64-23b7-4ec7-b1fe-af0f2e7d1fbe",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64c34bf2-8847-4535-adb0-e8394011d913",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "230890da-c815-45d2-b25c-ef64814eaf64",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "219421fd-a79a-4f1b-a3dd-0190c040dc1d",
+      "comment": "",
+      "command": "click",
+      "target": "id=knc-balance",
+      "targets": [
+        ["id=knc-balance", "id"],
+        ["css=#knc-balance", "css:finder"],
+        ["xpath=//span[@id='knc-balance']", "xpath:attributes"],
+        ["xpath=//button[@id='kncBalance']/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1824.482211829639926745')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "db8bab4d-62df-4a4f-b1cd-cef50ca46560",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ba58cd4-d3dd-4ee2-9d93-8ef5bd982020",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a73cc99-c0ce-427d-8377-ab8208b3593a",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87e44c07-7010-4c2d-9761-fa60bd7f16bc",
+      "comment": "",
+      "command": "type",
+      "target": "id=withdrawBalanceAmount",
+      "targets": [
+        ["id=withdrawBalanceAmount", "id"],
+        ["css=#withdrawBalanceAmount", "css:finder"],
+        ["xpath=//input[@id='withdrawBalanceAmount']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "0.01"
+    }, {
+      "id": "0618c293-bc2b-4a8c-9d3f-f51a946e68c2",
+      "comment": "",
+      "command": "click",
+      "target": "id=withdrawBalanceModalBtn",
+      "targets": [
+        ["id=withdrawBalanceModalBtn", "id"],
+        ["css=#withdrawBalanceModalBtn", "css:finder"],
+        ["xpath=//button[@id='withdrawBalanceModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='balanceModalForm']/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Withdraw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ebe376a-2d9f-4b12-88ca-cf5f632896d6",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=kncBalance",
+      "targets": [
+        ["id=kncBalance", "id"],
+        ["css=#kncBalance", "css:finder"],
+        ["xpath=//button[@id='kncBalance']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[3]/div[2]/div/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'KNC: 1824.482211829639926745')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cedef32b-9c9e-453f-94d7-da79c75b55bc",
+    "name": "Test add-buy order",
+    "commands": [{
+      "id": "9c77a4b7-1ec8-4c24-8a35-cad0c7806a46",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afb7f6eb-d164-4041-ac38-4ad70e480f79",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "554b613e-e067-48a7-b236-d283a236dfc0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Orderbooks",
+      "targets": [
+        ["linkText=Orderbooks", "linkText"],
+        ["css=.k-menu__item:nth-child(2) > .k-menu__link", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'orderbooks.html')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8f315cb-3856-45be-bc97-0a889e98f3ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a647d7a-bc8a-4f8c-8ccf-452c8d943fb4",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "077d600d-4e6b-4b5e-a94a-dbf810c29397",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f328ca3-8d81-4f16-81db-f7304110419c",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=buyOrder",
+      "targets": [
+        ["id=buyOrder", "id"],
+        ["css=#buyOrder", "css:finder"],
+        ["xpath=//a[contains(text(),'+ Buy Order')]", "xpath:link"],
+        ["xpath=//a[@id='buyOrder']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[4]/div[2]/div/div/div/div[2]/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[5]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b550330-6c44-4c51-908a-c098c4c7c1e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=buyOrder",
+      "targets": [
+        ["id=buyOrder", "id"],
+        ["css=#buyOrder", "css:finder"],
+        ["xpath=//a[contains(text(),'+ Buy Order')]", "xpath:link"],
+        ["xpath=//a[@id='buyOrder']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[4]/div[2]/div/div/div/div[2]/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[5]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c6893d3-b93b-4e4b-96f2-80e9c97c4766",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=buyOrder",
+      "targets": [
+        ["id=buyOrder", "id"],
+        ["css=#buyOrder", "css:finder"],
+        ["xpath=//a[contains(text(),'+ Buy Order')]", "xpath:link"],
+        ["xpath=//a[@id='buyOrder']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[4]/div[2]/div/div/div/div[2]/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[5]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "883244b1-ea0f-4c5b-b074-eab9705f4436",
+      "comment": "",
+      "command": "click",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65fda205-d1f1-4c58-a050-405263dc15ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "0.01"
+    }, {
+      "id": "00252e4b-002d-48ba-ae39-eadb23e9b1b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75c47422-58ca-4f91-a1ec-8bfdcec46c37",
+      "comment": "",
+      "command": "type",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": "0.02"
+    }, {
+      "id": "4f546eb1-e875-4ff0-91cf-a1927f56898b",
+      "comment": "",
+      "command": "click",
+      "target": "id=orderModalBtn",
+      "targets": [
+        ["id=orderModalBtn", "id"],
+        ["css=#orderModalBtn", "css:finder"],
+        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "27abb2f9-35fe-4cbd-85a5-5888e988bd34",
+    "name": "Test add-sell order",
+    "commands": [{
+      "id": "8f678ac1-4c99-499e-b2c0-4a81977cfbd9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1898f1dc-f98d-40d1-a70d-fa117c577a03",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c63ea552-15f6-4854-84e9-074fbc73d1fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cc476ab-83dd-4696-a537-3c796eba691d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27099b1f-34f7-43cc-8694-48e7f4de2c12",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "1ea9a990-8e28-4abb-8059-c5bbe00c00b0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b8594a8-84d5-48e3-9b6c-55bd5ac39e6f",
+      "comment": "",
+      "command": "click",
+      "target": "id=sellOrder",
+      "targets": [
+        ["id=sellOrder", "id"],
+        ["css=#sellOrder", "css:finder"],
+        ["xpath=//a[contains(text(),'+ Sell Order')]", "xpath:link"],
+        ["xpath=//a[@id='sellOrder']", "xpath:attributes"],
+        ["xpath=//div[@id='k_content']/div[4]/div[2]/div/div/div/div/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "398f3806-1183-4aca-9f4f-e0b94dda5626",
+      "comment": "",
+      "command": "click",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4853532b-44b3-4b31-a59e-e70eb2680c49",
+      "comment": "",
+      "command": "type",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "0.02"
+    }, {
+      "id": "9cebfa6b-935c-4e7f-9f95-372d4bf39745",
+      "comment": "",
+      "command": "click",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed87dea3-ecf0-42dd-9854-78224e95ed46",
+      "comment": "",
+      "command": "type",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": "0.01"
+    }, {
+      "id": "3da9dc25-9a60-4b4e-a74e-5b4daff4989e",
+      "comment": "",
+      "command": "click",
+      "target": "id=orderModalBtn",
+      "targets": [
+        ["id=orderModalBtn", "id"],
+        ["css=#orderModalBtn", "css:finder"],
+        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "88d92aa3-9a8d-42e7-ae25-cc3b22fbd10d",
+    "name": "Test update order",
+    "commands": [{
+      "id": "effaea4f-2401-4183-a269-dd566deaafc6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "143d96b1-22b8-4c54-b374-9fd0693dfb88",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b489b751-82b6-4fcc-98f0-d31b56800bc7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b618f7e9-57e3-4a11-a730-6240cd32f3a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a2a9edf-9398-4bfe-a04b-570d317d1470",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "f4c3cda4-235f-4211-b6d4-003f1871d841",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c85b980-c4f2-4a86-9031-077229f1f2f7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.odd:nth-child(1) .btn-primary",
+      "targets": [
+        ["css=.odd:nth-child(1) .btn-primary", "css:finder"],
+        ["xpath=//button[@value='Buy-3']", "xpath:attributes"],
+        ["xpath=//table[@id='my-orders']/tbody/tr/td[6]/button", "xpath:idRelative"],
+        ["xpath=//td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec072d03-e2a6-4668-b9c7-e8dabeb4fd12",
+      "comment": "",
+      "command": "click",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "428f8d0d-ed44-4e42-8496-d244c2e9cab0",
+      "comment": "",
+      "command": "type",
+      "target": "id=sourceTokenQuantity",
+      "targets": [
+        ["id=sourceTokenQuantity", "id"],
+        ["css=#sourceTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='sourceTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "0.01"
+    }, {
+      "id": "c58093fa-e93d-4f1c-ab2a-70a9ff8765a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52a27ad3-6b7a-40ca-8fe5-3a53aa02de6b",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1502a684-ce72-4c3d-b9dd-e0a2c9cb4de6",
+      "comment": "",
+      "command": "click",
+      "target": "id=destinationTokenQuantity",
+      "targets": [
+        ["id=destinationTokenQuantity", "id"],
+        ["css=#destinationTokenQuantity", "css:finder"],
+        ["xpath=//input[@id='destinationTokenQuantity']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc9c2085-4e64-4663-a044-f253be1991df",
+      "comment": "",
+      "command": "click",
+      "target": "id=orderModalBtn",
+      "targets": [
+        ["id=orderModalBtn", "id"],
+        ["css=#orderModalBtn", "css:finder"],
+        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c1521c6-145b-4180-aacd-b42ff8ce8e25",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=orderModalBtn",
+      "targets": [
+        ["id=orderModalBtn", "id"],
+        ["css=#orderModalBtn", "css:finder"],
+        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb57f1b8-ecbe-4dab-ab7a-f967cfac07de",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=orderModalBtn",
+      "targets": [
+        ["id=orderModalBtn", "id"],
+        ["css=#orderModalBtn", "css:finder"],
+        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1b8d5be7-0d12-4061-89f2-6999d2062561",
+    "name": "Test cancel order",
+    "commands": [{
+      "id": "f109f59f-88db-44e0-86e9-fb4ec8e4589a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ac9ab74-48fa-4bec-972b-ed782621b8ee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d53fa7f-3bae-4b7a-b05b-d56506833ef0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4e3aaee-95e9-421d-8884-72a16048a826",
+      "comment": "",
+      "command": "click",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cdf0775-2607-4cdf-bb89-1448ee368d99",
+      "comment": "",
+      "command": "type",
+      "target": "css=#reservesList_filter .form-control",
+      "targets": [
+        ["css=#reservesList_filter .form-control", "css:finder"],
+        ["xpath=//input[@type='search']", "xpath:attributes"],
+        ["xpath=//div[@id='reservesList_filter']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zil"
+    }, {
+      "id": "0878f398-9969-4962-bbad-15ce6cd65d5e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ZIL",
+      "targets": [
+        ["linkText=ZIL", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ZIL')]", "xpath:link"],
+        ["xpath=//table[@id='reservesList']/tbody/tr/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, './orderbookdetail.html?tokenSymbol=ZIL&tokenAddress=0xaD78AFbbE48bA7B670fbC54c65708cbc17450167&reserveContractAddress=0xD87A4F475CAe3df5e8142302b170Bf5321Cdd0ae')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ZIL')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b26668c2-5f3e-4b9c-b663-338e3eee0c69",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1037)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2785bd8f-775e-421f-ab8f-b2638438641e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.odd:nth-child(1) .btn-danger",
+      "targets": [
+        ["css=.odd:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=(//button[@value='Buy-3'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='my-orders']/tbody/tr/td[6]/button[2]", "xpath:idRelative"],
+        ["xpath=//td[6]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cancel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "03f3d76e-183f-4a52-91f5-f25a7e439571",
+      "comment": "",
+      "command": "click",
+      "target": "id=modal-btn-si",
+      "targets": [
+        ["id=modal-btn-si", "id"],
+        ["xpath=//button[@id='modal-btn-si']", "xpath:attributes"],
+        ["xpath=//div[@id='confirmationModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Yes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0c163f49-8ca2-4abf-a0a2-ac14937b812a",
+    "name": "Test create reserve",
+    "commands": [{
+      "id": "1a7b4bb2-862f-4673-b9cc-209b212a2e76",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23337653-b607-488c-8715-2c5e85911a00",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x817",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad3c1f47-600c-4b46-bd7d-2957ba46891a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.k-menu__item:nth-child(2) .k-menu__link-text",
+      "targets": [
+        ["css=.k-menu__item:nth-child(2) .k-menu__link-text", "css:finder"],
+        ["xpath=//div[@id='k_header_menu']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Orderbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f05fe46-2a5c-479d-8d10-abb3d2934623",
+      "comment": "",
+      "command": "click",
+      "target": "id=createReserve",
+      "targets": [
+        ["id=createReserve", "id"],
+        ["css=#createReserve", "css:finder"],
+        ["xpath=//a[contains(text(),'Create Reserve')]", "xpath:link"],
+        ["xpath=//a[@id='createReserve']", "xpath:attributes"],
+        ["xpath=//div[@id='k_header_menu_wrapper']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f03e81f2-d57e-4bb1-9b4b-6cc9c80fcc24",
+      "comment": "",
+      "command": "click",
+      "target": "id=tokenAddress",
+      "targets": [
+        ["id=tokenAddress", "id"],
+        ["css=#tokenAddress", "css:finder"],
+        ["xpath=//input[@id='tokenAddress']", "xpath:attributes"],
+        ["xpath=//form[@id='createReserveForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "531e1724-d753-4ef1-b7e5-ef3d7f4db8f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=tokenAddress",
+      "targets": [
+        ["id=tokenAddress", "id"],
+        ["css=#tokenAddress", "css:finder"],
+        ["xpath=//input[@id='tokenAddress']", "xpath:attributes"],
+        ["xpath=//form[@id='createReserveForm']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "0x9e2a802e608a3c046860c2039792dcf0876c4799"
+    }, {
+      "id": "b44164aa-e775-4972-8f18-a405d8eadbaf",
+      "comment": "",
+      "command": "click",
+      "target": "id=createReserveBtn",
+      "targets": [
+        ["id=createReserveBtn", "id"],
+        ["css=#createReserveBtn", "css:finder"],
+        ["xpath=//button[@id='createReserveBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='createReserveForm']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "399c3384-224c-412a-abd7-7ff022bf06ec",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["af66842b-dfeb-4ffb-82dc-6c97cf3c488e"]
+  }],
+  "urls": ["https://dswaps.com/"],
+  "plugins": []
+}

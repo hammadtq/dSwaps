@@ -1147,7 +1147,7 @@
     }, {
       "id": "65fda205-d1f1-4c58-a050-405263dc15ec",
       "comment": "",
-      "command": "type",
+      "command": "sendKeys",
       "target": "id=sourceTokenQuantity",
       "targets": [
         ["id=sourceTokenQuantity", "id"],
@@ -1156,7 +1156,7 @@
         ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
         ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
       ],
-      "value": "0.01"
+      "value": "1"
     }, {
       "id": "00252e4b-002d-48ba-ae39-eadb23e9b1b9",
       "comment": "",
@@ -1173,7 +1173,7 @@
     }, {
       "id": "75c47422-58ca-4f91-a1ec-8bfdcec46c37",
       "comment": "",
-      "command": "type",
+      "command": "sendKeys",
       "target": "id=destinationTokenQuantity",
       "targets": [
         ["id=destinationTokenQuantity", "id"],
@@ -1182,7 +1182,7 @@
         ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
         ["xpath=//div/input[2]", "xpath:position"]
       ],
-      "value": "0.02"
+      "value": "20"
     }, {
       "id": "4f546eb1-e875-4ff0-91cf-a1927f56898b",
       "comment": "",
@@ -1297,7 +1297,7 @@
     }, {
       "id": "4853532b-44b3-4b31-a59e-e70eb2680c49",
       "comment": "",
-      "command": "type",
+      "command": "sendKeys",
       "target": "id=sourceTokenQuantity",
       "targets": [
         ["id=sourceTokenQuantity", "id"],
@@ -1306,7 +1306,7 @@
         ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
         ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
       ],
-      "value": "0.02"
+      "value": "20"
     }, {
       "id": "9cebfa6b-935c-4e7f-9f95-372d4bf39745",
       "comment": "",
@@ -1323,7 +1323,7 @@
     }, {
       "id": "ed87dea3-ecf0-42dd-9854-78224e95ed46",
       "comment": "",
-      "command": "type",
+      "command": "sendKeys",
       "target": "id=destinationTokenQuantity",
       "targets": [
         ["id=destinationTokenQuantity", "id"],
@@ -1332,7 +1332,7 @@
         ["xpath=//form[@id='orderModalForm']/div/input[2]", "xpath:idRelative"],
         ["xpath=//div/input[2]", "xpath:position"]
       ],
-      "value": "0.01"
+      "value": "1"
     }, {
       "id": "3da9dc25-9a60-4b4e-a74e-5b4daff4989e",
       "comment": "",
@@ -1498,34 +1498,6 @@
       "id": "bc9c2085-4e64-4663-a044-f253be1991df",
       "comment": "",
       "command": "click",
-      "target": "id=orderModalBtn",
-      "targets": [
-        ["id=orderModalBtn", "id"],
-        ["css=#orderModalBtn", "css:finder"],
-        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
-        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "5c1521c6-145b-4180-aacd-b42ff8ce8e25",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "id=orderModalBtn",
-      "targets": [
-        ["id=orderModalBtn", "id"],
-        ["css=#orderModalBtn", "css:finder"],
-        ["xpath=//button[@id='orderModalBtn']", "xpath:attributes"],
-        ["xpath=//form[@id='orderModalForm']/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "fb57f1b8-ecbe-4dab-ab7a-f967cfac07de",
-      "comment": "",
-      "command": "mouseOut",
       "target": "id=orderModalBtn",
       "targets": [
         ["id=orderModalBtn", "id"],

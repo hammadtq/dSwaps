@@ -639,6 +639,10 @@
                     $.each( data, function( i, item ) {
                       var pairName = i.replace("_", "/");
                       var tokenImage = data[i]["symbol"];
+                      if (tokenImage == "REP"){
+                      console.log(tokenImage.toLowerCase());
+                      console.log(chainAddresses[tokenImage]);
+                      }
                       if(chainAddresses[tokenImage] == undefined){
                         tokenImage = "no_image_available";
                       }

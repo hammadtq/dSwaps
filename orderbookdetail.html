@@ -531,7 +531,7 @@
                     <input type="number" class="form-control" id="desiredRate" placeholder="0.00" step="any" required>
                     <label for="currentExpectedRate">Current Expected Rate:</label>
                     <span id="currentExpectedRate"></span><br/>
-                    <label for="orderValueUSD">Order Value [<span id="minOrderValue">&nbsp;Min Value: 2000 USD&nbsp;</span>]:</label>
+                    <label for="orderValueUSD">Order Value [<span id="minOrderValue">&nbsp;Min Value: <span id="minOrderValueInUSD">1000</span> USD&nbsp;</span>]:</label>
                     <span id="orderValueUSD">0.00</span><br/>
                     <label for="expectedKNCFee">Expected KNC Fee:</label>
                     <span id="expectedKNCFee">0.00</span>
@@ -805,12 +805,14 @@
 
               //Fill in balance information
               getBalance = async function(){
+                var minOrderValueInUSD = await getMinOrderValueUSD();
                 var kncBalance = await getKncBalanceInReserve(reserveContractAddress);
                 var ethBalance = await getTokenBalanceInReserve(reserveContractAddress);
                 var tokenBalance = await getTokenBalanceInReserve(reserveContractAddress, tokenAddress);
                 tokenBalanceInWallet = await getTokenBalanceInWallet(tokenAddress);
                 kncBalanceInWallet = await getTokenBalanceInWallet(chainAddresses["KNC"]);
                 etherBalanceInWallet = await getETHBalanceInWallet();
+                $("#minOrderValueInUSD").html(minOrderValueInUSD);
                 $("#knc-balance").html(kncBalance);
                 $("#eth-balance").html(ethBalance);
                 $("#token-balance").html(tokenBalance);
@@ -957,7 +959,12 @@
                 var currentKNCBalance = $("#knc-balance").html();
                 var currentETHBalance = $("#eth-balance").html();
 
-                if(parseFloat(expectedKNCFee) > parseFloat(currentKNCBalance)){
+                var minOrderValueInUSD = $("#minOrderValueInUSD").html();
+                var orderValueUSD = $("#orderValueUSD").html();
+
+                if(parseFloat(minOrderValueInUSD) > parseFloat(orderValueUSD)){
+                  errorModal("Minimum order value should be greater than "+ minOrderValueInUSD +" USD!");
+                }else if(parseFloat(expectedKNCFee) > parseFloat(currentKNCBalance)){
                   errorModal("You don't have enough KNC balance to cover this order, please deposit KNC balance using the dialog provided on the orderbook page!")
                 }else{
                   $("#orderModal").modal("hide");

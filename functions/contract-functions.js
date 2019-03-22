@@ -373,7 +373,6 @@ window.getReserveTokenExpectedRate = async function(reserveDetails){
 
 window.getReserveListingStage = async function(token){
 	console.log("getReserveListingStage");
-	console.log(web3);
 	var result = "";
 	var isAddress = web3.utils.isAddress(token);
 	if(isAddress){
@@ -686,6 +685,17 @@ window.getMedianizerEthRate = async function(){
 	var peek = await customReserveInstance.methods.peek().call();
 	var toBN = web3.utils.toBN(peek[0]);
 	return web3.utils.fromWei(toBN);
+}
+
+window.getMinOrderValueUSD = async function(){
+	console.log("getMinOrderValueUSD");
+	var result = "";
+	try{
+		var result = await OrderbookContractReserveInstance.methods.minNewOrderValueUsd().call();
+	}catch (err){
+		result = err;
+	}
+	return result;
 }
 
 window.getKnctoEthRateInReserve = async function(reserveContractAddress){

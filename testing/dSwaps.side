@@ -5,7 +5,7 @@
   "url": "https://dswaps.com",
   "tests": [{
     "id": "af66842b-dfeb-4ffb-82dc-6c97cf3c488e",
-    "name": "Test swaps",
+    "name": "8. Test swaps",
     "commands": [{
       "id": "f08d3e2f-1bc2-413d-81fb-7cf97f55f8ce",
       "comment": "",
@@ -141,7 +141,7 @@
     }]
   }, {
     "id": "5eeb7f5c-6d61-4d25-9f0a-d353d2aa2aff",
-    "name": "Test deposit KNC fee",
+    "name": "3. Test deposit KNC fee",
     "commands": [{
       "id": "c555c77d-f4f3-4e95-a2d4-7d802ae990f9",
       "comment": "",
@@ -246,7 +246,7 @@
         ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "1"
+      "value": "100"
     }, {
       "id": "a07619cf-3526-481b-bca2-4ea504995dc2",
       "comment": "",
@@ -264,7 +264,7 @@
     }]
   }, {
     "id": "9fe1969a-8411-4cd7-9b45-7624deb9126e",
-    "name": "Test deposit ETH",
+    "name": "2. Test deposit ETH",
     "commands": [{
       "id": "4bb53e85-124e-45ea-8733-b562882453bc",
       "comment": "",
@@ -369,7 +369,7 @@
         ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "0.00012"
+      "value": "1"
     }, {
       "id": "9e5b4449-5c05-431c-a021-fc8f2c09e066",
       "comment": "",
@@ -387,7 +387,7 @@
     }]
   }, {
     "id": "3d5ecf9a-d958-47f5-8146-040c6a786124",
-    "name": "Test deposit ZIL token",
+    "name": "4. Test deposit ZIL token",
     "commands": [{
       "id": "fa200c57-879d-4fd5-a0c3-7ec08ca43f08",
       "comment": "",
@@ -530,7 +530,7 @@
         ["xpath=//form[@id='balanceModalForm']/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "1.00"
+      "value": "20"
     }, {
       "id": "7d98f3c7-1ac0-4237-806c-df0a220b3d1f",
       "comment": "",
@@ -548,7 +548,7 @@
     }]
   }, {
     "id": "ae850876-93c9-4212-a538-a00a0d4f0406",
-    "name": "Test withdraw ETH",
+    "name": "10. Test withdraw ETH",
     "commands": [{
       "id": "01a2441e-6f3c-4011-b42d-c7b5b0965bed",
       "comment": "",
@@ -679,7 +679,7 @@
         ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "0.01"
+      "value": "1"
     }, {
       "id": "6239e0f6-0242-4bf9-8803-654a9dc187d2",
       "comment": "",
@@ -697,7 +697,7 @@
     }]
   }, {
     "id": "95dfc028-9e34-4cfe-8477-812e60744c93",
-    "name": "Test withdraw ZIL token",
+    "name": "12. Test withdraw ZIL token",
     "commands": [{
       "id": "0edd2384-1f11-40a1-8ac4-dc6b697bf02f",
       "comment": "",
@@ -853,7 +853,7 @@
     }]
   }, {
     "id": "a72da80e-8246-4320-a5af-3e63e108cfb3",
-    "name": "Test withdraw KNC fee",
+    "name": "11. Test withdraw KNC fee",
     "commands": [{
       "id": "33b384a3-24f5-45ac-b9f7-67daa7988e0d",
       "comment": "",
@@ -986,7 +986,7 @@
         ["xpath=//form[@id='balanceModalForm']/div/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "0.01"
+      "value": "1"
     }, {
       "id": "0618c293-bc2b-4a8c-9d3f-f51a946e68c2",
       "comment": "",
@@ -1018,7 +1018,7 @@
     }]
   }, {
     "id": "cedef32b-9c9e-453f-94d7-da79c75b55bc",
-    "name": "Test add-buy order",
+    "name": "5. Test add-buy order",
     "commands": [{
       "id": "9c77a4b7-1ec8-4c24-8a35-cad0c7806a46",
       "comment": "",
@@ -1184,6 +1184,13 @@
       ],
       "value": "20"
     }, {
+      "id": "67afdc03-d133-4c32-9e31-9da716c2b754",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "3000"
+    }, {
       "id": "4f546eb1-e875-4ff0-91cf-a1927f56898b",
       "comment": "",
       "command": "click",
@@ -1200,7 +1207,7 @@
     }]
   }, {
     "id": "27abb2f9-35fe-4cbd-85a5-5888e988bd34",
-    "name": "Test add-sell order",
+    "name": "6. Test add-sell order",
     "commands": [{
       "id": "8f678ac1-4c99-499e-b2c0-4a81977cfbd9",
       "comment": "",
@@ -1334,6 +1341,13 @@
       ],
       "value": "1"
     }, {
+      "id": "5daffe31-f10b-4c77-accd-236e168bd53c",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "3000"
+    }, {
       "id": "3da9dc25-9a60-4b4e-a74e-5b4daff4989e",
       "comment": "",
       "command": "click",
@@ -1350,7 +1364,7 @@
     }]
   }, {
     "id": "88d92aa3-9a8d-42e7-ae25-cc3b22fbd10d",
-    "name": "Test update order",
+    "name": "7. Test update order",
     "commands": [{
       "id": "effaea4f-2401-4183-a269-dd566deaafc6",
       "comment": "",
@@ -1454,7 +1468,7 @@
         ["xpath=//form[@id='orderModalForm']/div/input", "xpath:idRelative"],
         ["xpath=//div[9]/div/div/div[2]/form/div/input", "xpath:position"]
       ],
-      "value": "0.01"
+      "value": "2"
     }, {
       "id": "c58093fa-e93d-4f1c-ab2a-70a9ff8765a4",
       "comment": "",
@@ -1495,6 +1509,13 @@
       ],
       "value": ""
     }, {
+      "id": "15262936-f855-45dd-9998-d30963cb6ed5",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "3000"
+    }, {
       "id": "bc9c2085-4e64-4663-a044-f253be1991df",
       "comment": "",
       "command": "click",
@@ -1511,7 +1532,7 @@
     }]
   }, {
     "id": "1b8d5be7-0d12-4061-89f2-6999d2062561",
-    "name": "Test cancel order",
+    "name": "9. Test cancel order",
     "commands": [{
       "id": "f109f59f-88db-44e0-86e9-fb4ec8e4589a",
       "comment": "",
@@ -1613,7 +1634,7 @@
     }]
   }, {
     "id": "0c163f49-8ca2-4abf-a0a2-ac14937b812a",
-    "name": "Test create reserve",
+    "name": "1. Test create reserve",
     "commands": [{
       "id": "1a7b4bb2-862f-4673-b9cc-209b212a2e76",
       "comment": "",

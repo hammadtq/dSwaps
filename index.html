@@ -217,9 +217,9 @@
                                       </form>
                                     </div>
                                     </div>
-                                    <div class="">
+                                    <!--<div class="">
                                         <!--begin::Portlet-->
-                                        <div class="k-portlet k-portlet--height-fluid k-widget-17">
+                                        <!--<div class="k-portlet k-portlet--height-fluid k-widget-17">
                                             <div class="k-portlet__head">
                                                 <div class="k-portlet__head-label">
                                                     <h3 class="k-portlet__head-title">
@@ -256,11 +256,220 @@
 
                                         </div>
                                         <!--end::Portlet-->
-                                    </div>
+                                    <!--</div>-->
+
 
                                     <!--end::Row-->
                                     <!--end::Dashboard 4-->
-                                </div>
+
+                                <div class="row">
+	<div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+<div class="k-portlet k-portlet--height-fluid k-widget-12">
+	<div class="k-portlet__body">
+		<div class="k-widget-12__body">
+			<div class="k-widget-12__head">
+				<div class="k-widget-12__date k-widget-12__date--danger">
+					<span class="k-widget-12__day" id="totalPermissionessReserves"></span>
+
+				</div>
+				<div class="k-widget-12__label">
+					<h3 class="k-widget-12__title">Total Permissionless Reserves</h3>
+					<span class="k-widget-12__desc">A number respresenting token reserve count on the network</span>
+				</div>
+			</div>
+			<div class="k-widget-12__info">
+				Permissionless reserves allow you to create your own token reserve and start swaping/trading tokens with network participants!
+			</div>
+		</div>
+	</div>
+	<div class="k-portlet__foot k-portlet__foot--md">
+		<div class="k-portlet__foot-wrapper">
+			<div class="k-portlet__foot-info">
+				You can create your own reserve now!
+			</div>
+			<div class="k-portlet__foot-toolbar">
+				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Create Reserve</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end::Portlet-->
+
+	</div>
+	<div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+    <div class="k-portlet k-portlet--height-fluid k-widget-12">
+    	<div class="k-portlet__body">
+    		<div class="k-widget-12__body">
+    			<div class="k-widget-12__head">
+    				<div class="k-widget-12__date k-widget-12__date--warning">
+    					<span class="k-widget-12__day" id="totalTokensLocked"></span>
+
+    				</div>
+    				<div class="k-widget-12__label">
+    					<h3 class="k-widget-12__title">Pooled Tokens</h3>
+    					<span class="k-widget-12__desc">Total tokens deposited in reserves</span>
+    				</div>
+    			</div>
+    			<div class="k-widget-12__info">
+    				We just aggregated the number of tokens locked in different Kyber permissionless reserves
+    			</div>
+    		</div>
+    	</div>
+    	<div class="k-portlet__foot k-portlet__foot--md">
+    		<div class="k-portlet__foot-wrapper">
+    			<div class="k-portlet__foot-info">
+    				Pool your tokens for one of these reserves
+    			</div>
+    			<div class="k-portlet__foot-toolbar">
+    				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Pool</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+<!--end::Portlet-->
+
+	</div>
+  <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+    <div class="k-portlet k-portlet--height-fluid k-widget-12">
+    	<div class="k-portlet__body">
+    		<div class="k-widget-12__body">
+    			<div class="k-widget-12__head">
+    				<div class="k-widget-12__date k-widget-12__date--success">
+    					<span class="k-widget-12__day" id="totalETHLocked"></span>
+
+    				</div>
+    				<div class="k-widget-12__label">
+    					<h3 class="k-widget-12__title">Pooled ETH</h3>
+    					<span class="k-widget-12__desc">Total ETH deposited in reserves</span>
+    				</div>
+    			</div>
+    			<div class="k-widget-12__info">
+    				Each reserve has to trade against ETH - here we show total number of ETH deposited into permissionless reserves so far!
+    			</div>
+    		</div>
+    	</div>
+    	<div class="k-portlet__foot k-portlet__foot--md">
+    		<div class="k-portlet__foot-wrapper">
+    			<div class="k-portlet__foot-info">
+    				Ready to pool, together?
+    			</div>
+    			<div class="k-portlet__foot-toolbar">
+    				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Deposit</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+<!--end::Portlet-->
+
+	</div>
+  <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+    <div class="k-portlet k-portlet--height-fluid k-widget-12">
+    	<div class="k-portlet__body">
+    		<div class="k-widget-12__body">
+    			<div class="k-widget-12__head">
+    				<div class="k-widget-12__date k-widget-12__date--info">
+    					<span class="k-widget-12__day" id="totalUSDLocked"></span>
+
+    				</div>
+    				<div class="k-widget-12__label">
+    					<h3 class="k-widget-12__title">ETH USD Value</h3>
+    					<span class="k-widget-12__desc">USD value of deposited ETH tokens</span>
+    				</div>
+    			</div>
+    			<div class="k-widget-12__info">
+    				We thought it will be fun to show how much USD value these pooled ETH tokens carry
+    			</div>
+    		</div>
+    	</div>
+    	<div class="k-portlet__foot k-portlet__foot--md">
+    		<div class="k-portlet__foot-wrapper">
+    			<div class="k-portlet__foot-info">
+    				Pool together to liquidate the market!
+    			</div>
+    			<div class="k-portlet__foot-toolbar">
+    				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Maker Order</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+<!--end::Portlet-->
+
+	</div>
+  <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+    <div class="k-portlet k-portlet--height-fluid k-widget-12">
+    	<div class="k-portlet__body">
+    		<div class="k-widget-12__body">
+    			<div class="k-widget-12__head">
+    				<div class="k-widget-12__date k-widget-12__date--danger">
+    					<span class="k-widget-12__day" id="totalPermissionlessTrades"></span>
+
+    				</div>
+    				<div class="k-widget-12__label">
+    					<h3 class="k-widget-12__title">Permissionless Trades</h3>
+    					<span class="k-widget-12__desc">All trades that happened on permissionless reserves</span>
+    				</div>
+    			</div>
+    			<div class="k-widget-12__info">
+    				A number showing the trade volume happening on the permissionless reserves
+    			</div>
+    		</div>
+    	</div>
+    	<div class="k-portlet__foot k-portlet__foot--md">
+    		<div class="k-portlet__foot-wrapper">
+    			<div class="k-portlet__foot-info">
+    				Start using permissionless reserves!
+    			</div>
+    			<div class="k-portlet__foot-toolbar">
+    				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Trade</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+<!--end::Portlet-->
+
+	</div>
+  <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+		<!--begin::Portlet-->
+    <div class="k-portlet k-portlet--height-fluid k-widget-12">
+    	<div class="k-portlet__body">
+    		<div class="k-widget-12__body">
+    			<div class="k-widget-12__head">
+    				<div class="k-widget-12__date k-widget-12__date--warn">
+    					<span class="k-widget-12__day" id="totalKyberTrades"></span>
+
+    				</div>
+    				<div class="k-widget-12__label">
+    					<h3 class="k-widget-12__title">All Kyber Trades</h3>
+    					<span class="k-widget-12__desc">Total trade volume happening on Kyber Network</span>
+    				</div>
+    			</div>
+    			<div class="k-widget-12__info">
+            Permissioned and permissionless trades combined on Kyber Network
+    			</div>
+    		</div>
+    	</div>
+    	<div class="k-portlet__foot k-portlet__foot--md">
+    		<div class="k-portlet__foot-wrapper">
+    			<div class="k-portlet__foot-info">
+    				Kyber allows you to swap over 100+ tokens!
+    			</div>
+    			<div class="k-portlet__foot-toolbar">
+    				<a href="orderbooks.html" class="btn btn-default btn-sm btn-bold btn-upper">Taker Order</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+<!--end::Portlet-->
+
+	</div>
+
+</div>
+<!--end::Row--></div>
                                 <!-- end:: Content -->
                             </div>
                         </div>
@@ -528,7 +737,7 @@
             }
 
             getTokenPairs = function(){
-              var kyberAPI = "https://tracker.kyber.network/api/tokens/pairs";
+              var kyberAPI = "https://api.kyber.network/api/tokens/pairs?callback=?";
               $.getJSON( kyberAPI )
                   .done(function( data ) {
                     $('#removeThisDiv').remove();
@@ -544,6 +753,34 @@
             }
 
             loadWeb3 = async function(){
+              $.ajax({
+                    method: "POST",
+                    url: "https://api.thegraph.com/subgraphs/name/hammadtq/kybernetwork",
+                    contentType: "application/json",
+
+                    data: JSON.stringify({
+                      query: `{
+                        kyber(id: 1) {
+                            id
+                            permissionlessReserveCount
+                            permissionlessTotalTokenDeposited
+                            permissionlessTotalEtherDeposited
+                            permissionlessReserveTrades
+                            kyberTotalTrades
+                          }
+                        }`
+                })
+              }).done(function(data) {
+                  console.log( web3.utils.fromWei(data.data.kyber["permissionlessTotalEtherDeposited"], 'ether') );
+                  var ethLocked = Math.round(web3.utils.fromWei(data.data.kyber["permissionlessTotalEtherDeposited"], 'ether'));
+                  var usdLocked = ethLocked * 172.45;
+                  $( "#totalPermissionessReserves" ).text( data.data.kyber["permissionlessReserveCount"] );
+                  $( "#totalTokensLocked" ).text( kFormatter(web3.utils.fromWei(data.data.kyber["permissionlessTotalTokenDeposited"], 'ether')));
+                  $( "#totalETHLocked" ).text( ethLocked );
+                  $( "#totalUSDLocked" ).text( nFormatter(usdLocked) );
+                  $( "#totalPermissionlessTrades" ).text( nFormatter(data.data.kyber["permissionlessReserveTrades"] ));
+                  $( "#totalKyberTrades" ).text( kFormatter(data.data.kyber["kyberTotalTrades"] ));
+                });
                   // Modern dapp browsers...
               if (window.ethereum) {
                   window.web3 = new Web3(ethereum);
@@ -568,7 +805,18 @@
                   console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
                   $("#metaMaskAlert").removeClass('d-none');
               }
+
             }
+
+            kFormatter = function(num) {
+                return Math.abs(num) > 99999 ? Math.sign(num)*((Math.abs(num)/1000000).toFixed(1)) + 'M' : Math.sign(num)*Math.abs(num)
+            }
+
+            nFormatter = function(num) {
+                return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'K' : Math.sign(num)*Math.abs(num)
+            }
+
+
 
             setupTokensInSelect = function(){
               const keys = Object.keys(chainAddresses);
@@ -603,7 +851,7 @@
               loadWeb3();
               await setupNetwork();
               setupTokensInSelect();
-              getTokenPairs();
+              //getTokenPairs();
 
               getExpectedRateFromContract(); //load ETH-KNC rate at load
               $( "#submitSwap" ).click(async function() {
